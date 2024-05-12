@@ -1,0 +1,147 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{drname}-{course}-{####}",
+ "creation": "2024-05-11 20:41:29.485940",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_htdl",
+  "column_break_wcwh",
+  "collage",
+  "department",
+  "level",
+  "column_break_hsci",
+  "drname",
+  "course",
+  "section_break_yupg",
+  "chapter",
+  "section_break_ktvm",
+  "total_question",
+  "total_question_list",
+  "section_break_gxfp",
+  "number_of_questions",
+  "number_of_models",
+  "random_question"
+ ],
+ "fields": [
+  {
+   "fieldname": "drname",
+   "fieldtype": "Link",
+   "label": "Dr.Name",
+   "options": "Doctor"
+  },
+  {
+   "fieldname": "course",
+   "fieldtype": "Link",
+   "label": "Course",
+   "options": "Course"
+  },
+  {
+   "fieldname": "collage",
+   "fieldtype": "Link",
+   "label": "Collage",
+   "options": "Collage"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "level",
+   "fieldtype": "Data",
+   "label": "Level"
+  },
+  {
+   "fieldname": "section_break_gxfp",
+   "fieldtype": "Section Break",
+   "label": "Model Settings"
+  },
+  {
+   "fieldname": "total_question",
+   "fieldtype": "Int",
+   "label": "Total Question"
+  },
+  {
+   "fieldname": "total_question_list",
+   "fieldtype": "Table",
+   "label": "Total Question List",
+   "options": "Question Quiz",
+   "reqd": 1
+  },
+  {
+   "fieldname": "chapter",
+   "fieldtype": "Table",
+   "label": "Chapter",
+   "options": "Course ref Chapter"
+  },
+  {
+   "fieldname": "section_break_ktvm",
+   "fieldtype": "Section Break",
+   "label": "Models Questions"
+  },
+  {
+   "fieldname": "number_of_models",
+   "fieldtype": "Int",
+   "label": "Number of Models"
+  },
+  {
+   "fieldname": "number_of_questions",
+   "fieldtype": "Int",
+   "label": "Number of Questions"
+  },
+  {
+   "default": "0",
+   "fieldname": "random_question",
+   "fieldtype": "Check",
+   "label": "Random Question"
+  },
+  {
+   "fieldname": "column_break_wcwh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_yupg",
+   "fieldtype": "Section Break",
+   "label": "Chapters"
+  },
+  {
+   "columns": 2,
+   "fieldname": "column_break_hsci",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 2,
+   "fieldname": "section_break_htdl",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-12 05:22:59.534266",
+ "modified_by": "Administrator",
+ "module": "Exam Managment",
+ "name": "Create Exam",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

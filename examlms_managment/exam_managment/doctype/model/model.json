@@ -1,0 +1,96 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{#####}-{id_exam}",
+ "creation": "2024-05-09 19:08:04.681780",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "id_exam",
+  "section_break_spel",
+  "drname",
+  "course",
+  "column_break_nnmk",
+  "collage",
+  "department",
+  "level",
+  "section_break_qndn",
+  "question"
+ ],
+ "fields": [
+  {
+   "fieldname": "drname",
+   "fieldtype": "Data",
+   "label": "Dr.Name"
+  },
+  {
+   "fieldname": "course",
+   "fieldtype": "Data",
+   "label": "Course"
+  },
+  {
+   "fieldname": "collage",
+   "fieldtype": "Data",
+   "label": "Collage"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department"
+  },
+  {
+   "fieldname": "level",
+   "fieldtype": "Data",
+   "label": "Level"
+  },
+  {
+   "fieldname": "question",
+   "fieldtype": "Table",
+   "label": "Question",
+   "options": "Question Quiz"
+  },
+  {
+   "fieldname": "id_exam",
+   "fieldtype": "Data",
+   "label": "ID Exam",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_spel",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_nnmk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_qndn",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-12 18:28:50.065169",
+ "modified_by": "Administrator",
+ "module": "Exam Managment",
+ "name": "Model",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,64 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-09 19:12:21.497400",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "question",
+  "section_break_fjpt",
+  "question_title",
+  "question_type",
+  "question_degree",
+  "difficulty_degree"
+ ],
+ "fields": [
+  {
+   "fieldname": "question",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Question",
+   "options": "LMS Question"
+  },
+  {
+   "fieldname": "section_break_fjpt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "question_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Question Type"
+  },
+  {
+   "fieldname": "question_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Question Title"
+  },
+  {
+   "fieldname": "question_degree",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Question Degree"
+  },
+  {
+   "fieldname": "difficulty_degree",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Difficulty Degree"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-05-12 03:21:27.042800",
+ "modified_by": "Administrator",
+ "module": "Exam Managment",
+ "name": "Question Quiz",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

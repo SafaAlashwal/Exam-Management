@@ -108,21 +108,19 @@ app_license = "MIT"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	"LMS Question": "examlms_managment.override.question.LMSQuestion"
+}
 
 # Document Events
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"LMS Question": {
+		"after_insert": "examlms_managment.override.question.after_insert",
+	}
+}
 
 # Scheduled Tasks
 # ---------------
@@ -213,3 +211,8 @@ app_license = "MIT"
 # auth_hooks = [
 # 	"examlms_managment.auth.validate"
 # ]
+
+
+fixtures =[
+    "Custom Field"
+]
