@@ -15,7 +15,7 @@ def Add_Model():
         for _ in range(num_models):
             model_doc = frappe.new_doc("Model")
             model_doc.collage = create_exam_doc.collage
-            model_doc.drname = create_exam_doc.drname
+            model_doc.doctor = create_exam_doc.doctor
             model_doc.department = create_exam_doc.department
             model_doc.level = create_exam_doc.level
             model_doc.course = create_exam_doc.course

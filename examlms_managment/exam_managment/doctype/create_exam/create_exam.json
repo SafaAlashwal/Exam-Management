@@ -12,7 +12,7 @@
   "department",
   "level",
   "column_break_hsci",
-  "drname",
+  "doctor",
   "course",
   "section_break_yupg",
   "chapter",
@@ -25,12 +25,6 @@
   "random_question"
  ],
  "fields": [
-  {
-   "fieldname": "drname",
-   "fieldtype": "Link",
-   "label": "Dr.Name",
-   "options": "Doctor"
-  },
   {
    "fieldname": "course",
    "fieldtype": "Link",
@@ -62,6 +56,7 @@
   {
    "fieldname": "total_question",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Total Question"
   },
   {
@@ -117,11 +112,17 @@
    "columns": 2,
    "fieldname": "section_break_htdl",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "doctor",
+   "fieldtype": "Link",
+   "label": "Doctor",
+   "options": "Doctor"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-12 05:22:59.534266",
+ "modified": "2024-05-17 00:55:03.924205",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Create Exam",

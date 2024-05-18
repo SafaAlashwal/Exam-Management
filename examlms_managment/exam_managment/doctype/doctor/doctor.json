@@ -9,25 +9,27 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
-  "course"
+  "courses"
  ],
  "fields": [
   {
    "fieldname": "name1",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Name",
+   "reqd": 1,
    "unique": 1
   },
   {
-   "fieldname": "course",
+   "fieldname": "courses",
    "fieldtype": "Table",
-   "label": "Course",
+   "label": "Courses",
    "options": "Doctor Ref Course"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-11 21:41:04.186576",
+ "modified": "2024-05-17 22:31:12.546550",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Doctor",

@@ -15,7 +15,9 @@
   {
    "fieldname": "name1",
    "fieldtype": "Data",
-   "label": "Name",
+   "in_list_view": 1,
+   "label": "Chapter",
+   "reqd": 1,
    "unique": 1
   },
   {
@@ -27,7 +29,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-10 00:50:53.035278",
+ "modified": "2024-05-16 23:15:59.081714",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Chapter",

@@ -8,21 +8,16 @@
  "field_order": [
   "id_exam",
   "section_break_spel",
-  "drname",
-  "course",
-  "column_break_nnmk",
   "collage",
   "department",
   "level",
+  "column_break_nnmk",
+  "doctor",
+  "course",
   "section_break_qndn",
   "question"
  ],
  "fields": [
-  {
-   "fieldname": "drname",
-   "fieldtype": "Data",
-   "label": "Dr.Name"
-  },
   {
    "fieldname": "course",
    "fieldtype": "Data",
@@ -66,11 +61,16 @@
   {
    "fieldname": "section_break_qndn",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "doctor",
+   "fieldtype": "Data",
+   "label": "Doctor"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-12 18:28:50.065169",
+ "modified": "2024-05-18 20:04:27.233221",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Model",
