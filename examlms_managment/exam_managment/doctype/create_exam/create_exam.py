@@ -12,12 +12,39 @@ class CreateExam(Document):
 
 			@frappe.whitelist()
 			def fetch_question(self):
+				# exam_type = self.defficulty_level
+				# course = self.course
+
+				# if exam_type:
+				# 	test_type_doc = frappe.get_doc('Type Setting', exam_type)
+					
+				# 	# Loop through the exam_structure list
+				# 	for structure in test_type_doc.exam_structure:
+				# 			difficulty_degree = structure.question_level
+				# 			num_questions = structure.number_of_question
+				# 			question_type = structure.type
+
+				# 			if question_type == "Choices":
+				# 				# Fetch questions for Choices type
+				# 				questions = frappe.get_list('LMS Question', filters={'custom_course': course, 'custom_difficulty_level': difficulty_degree, 'type': 'Choices'}, pluck='name')
+				# 			elif question_type == "User":
+				# 				# Fetch questions for Subjective type
+				# 				questions = frappe.get_list('LMS Question', filters={'custom_course': course, 'custom_difficulty_level': difficulty_degree, 'type': 'Subjective'}, pluck='name')
+				# 			else:
+				# 				# Fetch questions for other types
+				# 				questions = frappe.get_list('LMS Question', filters={'custom_course': course, 'custom_difficulty_level': difficulty_degree}, pluck='name')
+
+				# else:
+				# 	difficulty_degree = None
+				# 	num_questions = self.total_question
+				# frappe.msgprint(exam_type)
 				all_chapter = [d.name1 for d in self.chapter]
 				course = self.course
 
 				if not all_chapter:
 					if course:
-						all_questions = frappe.get_list('LMS Question', filters={'custom_course': course}, pluck='name')
+
+						all_questions = frappe.get_list('LMS Question', filters={'custom_course': course }, pluck='name')
 					else:
 						all_questions = frappe.get_list('LMS Question', pluck='name')
 				else:
@@ -44,7 +71,7 @@ class CreateExam(Document):
 					question_title = question_doc.question
 					question_type = question_doc.type
 					question_degree = question_doc.custom_degree_question
-					difficulty_degree = question_doc.custom_difficulty_degree
+					difficulty_degree = question_doc.custom_difficulty_level
 
 					self.append("total_question_list", {
 						"question": question_name,

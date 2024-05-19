@@ -1,0 +1,47 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-18 22:52:40.810774",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "type",
+  "question_level",
+  "number_of_question"
+ ],
+ "fields": [
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "Choices\nUser Input\nBlock"
+  },
+  {
+   "fieldname": "question_level",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Question Level",
+   "options": "Difficulty Levels"
+  },
+  {
+   "fieldname": "number_of_question",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Number of Question"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-05-19 00:15:13.369136",
+ "modified_by": "Administrator",
+ "module": "Exam Managment",
+ "name": "Data Setting",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

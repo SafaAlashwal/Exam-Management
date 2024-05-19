@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:title",
+ "creation": "2024-05-18 22:58:22.120284",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "type",
+  "number_of_questions",
+  "exam_structure",
+  "exam_structure2"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Parcentage\nNumber"
+  },
+  {
+   "depends_on": "eval: doc.type == 'Parcentage'",
+   "fieldname": "number_of_questions",
+   "fieldtype": "Int",
+   "label": "Number of Questions"
+  },
+  {
+   "depends_on": "eval: doc.type == 'Number'",
+   "fieldname": "exam_structure",
+   "fieldtype": "Table",
+   "label": "Exam Structure",
+   "options": "Data Setting"
+  },
+  {
+   "depends_on": "eval: doc.type == 'Parcentage'",
+   "fieldname": "exam_structure2",
+   "fieldtype": "Table",
+   "label": "Exam Structure2",
+   "options": "Data Setting2"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-19 11:43:40.551920",
+ "modified_by": "Administrator",
+ "module": "Exam Managment",
+ "name": "Type Setting",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

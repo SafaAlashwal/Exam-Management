@@ -1,34 +1,30 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:department",
- "creation": "2024-05-11 21:11:24.927462",
+ "autoname": "field:level",
+ "creation": "2024-05-19 00:09:22.201879",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "department",
-  "collage"
+  "level"
  ],
  "fields": [
   {
-   "fieldname": "department",
+   "allow_in_quick_entry": 1,
+   "fieldname": "level",
    "fieldtype": "Data",
-   "label": "Department",
+   "in_list_view": 1,
+   "label": "Level",
+   "reqd": 1,
    "unique": 1
-  },
-  {
-   "fieldname": "collage",
-   "fieldtype": "Link",
-   "label": "Collage",
-   "options": "Collage"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-19 11:16:01.885733",
+ "modified": "2024-05-19 00:21:14.606890",
  "modified_by": "Administrator",
  "module": "Exam Managment",
- "name": "Department",
+ "name": "Difficulty Levels",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
@@ -45,6 +41,7 @@
    "write": 1
   }
  ],
+ "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

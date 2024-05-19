@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:name1",
  "creation": "2024-05-11 21:10:16.832093",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -9,17 +10,20 @@
  ],
  "fields": [
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "name1",
    "fieldtype": "Data",
-   "label": "Name"
+   "label": "Name",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-11 21:11:05.547955",
+ "modified": "2024-05-19 11:23:59.845490",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Collage",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -35,6 +39,7 @@
    "write": 1
   }
  ],
+ "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
