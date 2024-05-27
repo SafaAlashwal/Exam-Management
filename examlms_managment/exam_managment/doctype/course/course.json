@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{name1}-{###}",
+ "autoname": "format:{name1}",
  "creation": "2024-05-06 00:23:46.316298",
  "default_view": "List",
  "doctype": "DocType",
@@ -9,6 +9,7 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
+  "chapters_section",
   "chapter"
  ],
  "fields": [
@@ -24,11 +25,16 @@
    "fieldtype": "Table",
    "label": "Chapter",
    "options": "Course ref Chapter"
+  },
+  {
+   "fieldname": "chapters_section",
+   "fieldtype": "Section Break",
+   "label": "Chapters"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-16 22:18:26.767503",
+ "modified": "2024-05-26 23:57:03.686943",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Course",

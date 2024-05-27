@@ -6,26 +6,37 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "collage",
   "department",
-  "collage"
+  "levels"
  ],
  "fields": [
   {
    "fieldname": "department",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Department",
+   "reqd": 1,
    "unique": 1
   },
   {
    "fieldname": "collage",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Collage",
-   "options": "Collage"
+   "options": "Collage",
+   "reqd": 1
+  },
+  {
+   "fieldname": "levels",
+   "fieldtype": "Table",
+   "label": "Levels",
+   "options": "Department Level"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-19 11:16:01.885733",
+ "modified": "2024-05-20 01:25:06.869263",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Department",

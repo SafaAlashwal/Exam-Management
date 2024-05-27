@@ -8,11 +8,12 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "name1",
-  "course"
+  "course",
+  "name1"
  ],
  "fields": [
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "name1",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -21,15 +22,17 @@
    "unique": 1
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "course",
    "fieldtype": "Link",
    "label": "Course",
-   "options": "Course"
+   "options": "Course",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-16 23:15:59.081714",
+ "modified": "2024-05-22 16:54:58.640295",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Chapter",
@@ -49,6 +52,7 @@
    "write": 1
   }
  ],
+ "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

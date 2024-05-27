@@ -40,3 +40,4 @@ class TypeSetting(Document):
 				}, fields=["question"], limit_page_length=num_questions)
 			frappe.msgprint(str(questions))
 			return questions
+

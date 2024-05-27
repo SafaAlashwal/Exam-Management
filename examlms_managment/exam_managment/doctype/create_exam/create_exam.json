@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{doctor}-{course}-{####}",
+ "autoname": "format:{doctor}-{course}-{##}",
  "creation": "2024-05-11 20:41:29.485940",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -16,39 +16,45 @@
   "course",
   "section_break_yupg",
   "chapter",
-  "section_break_ktvm",
-  "defficulty_level",
-  "total_question",
-  "total_question_list",
   "section_break_gxfp",
-  "number_of_questions",
+  "difficulty_level",
+  "random_question",
+  "column_break_esjo",
   "number_of_models",
-  "random_question"
+  "column_break_drca",
+  "number_of_questions",
+  "section_break_ktvm",
+  "total_question",
+  "total_question_list"
  ],
  "fields": [
   {
    "fieldname": "course",
    "fieldtype": "Link",
    "label": "Course",
-   "options": "Course"
+   "options": "Course",
+   "reqd": 1
   },
   {
    "fieldname": "collage",
    "fieldtype": "Link",
    "label": "Collage",
-   "options": "Collage"
+   "options": "Collage",
+   "reqd": 1
   },
   {
    "fieldname": "department",
    "fieldtype": "Link",
    "label": "Department",
-   "options": "Department"
+   "options": "Department",
+   "reqd": 1
   },
   {
    "fieldname": "level",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Level",
-   "options": "1\n2\n3\n4"
+   "options": "Level",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_gxfp",
@@ -59,14 +65,14 @@
    "fieldname": "total_question",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Total Question"
+   "label": "Total Question",
+   "read_only_depends_on": "eval: doc.random_question == 1"
   },
   {
    "fieldname": "total_question_list",
    "fieldtype": "Table",
    "label": "Total Question List",
-   "options": "Question Quiz",
-   "reqd": 1
+   "options": "Question Quiz"
   },
   {
    "fieldname": "chapter",
@@ -80,6 +86,7 @@
    "label": "Models Questions"
   },
   {
+   "default": "1",
    "fieldname": "number_of_models",
    "fieldtype": "Int",
    "label": "Number of Models"
@@ -87,7 +94,8 @@
   {
    "fieldname": "number_of_questions",
    "fieldtype": "Int",
-   "label": "Number of Questions"
+   "label": "Number of Questions",
+   "read_only": 1
   },
   {
    "default": "0",
@@ -119,18 +127,28 @@
    "fieldname": "doctor",
    "fieldtype": "Link",
    "label": "Doctor",
-   "options": "Doctor"
+   "options": "Doctor",
+   "reqd": 1
   },
   {
-   "fieldname": "defficulty_level",
+   "fieldname": "difficulty_level",
    "fieldtype": "Link",
-   "label": "Defficulty Level",
-   "options": "Type Setting"
+   "label": "Difficulty Level",
+   "options": "Type Setting",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_esjo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_drca",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-19 11:13:12.785137",
+ "modified": "2024-05-27 03:41:58.945658",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Create Exam",

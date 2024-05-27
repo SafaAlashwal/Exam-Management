@@ -4,20 +4,14 @@
 frappe.ui.form.on('Create Exam', {
   refresh : function (frm){
     frm.add_custom_button(__("Fetch Question"), function() {
-      if (frm.doc.total_question === null || frm.doc.total_question === undefined) {
-        frappe.msgprint("Please enter the total number of questions.");
-    } else {
         frappe.call({
             method: "fetch_question",
             doc: frm.doc,
             callback: () => {
-                frappe.msgprint("Done");
                 frm.save();
             }
         });
-    }
   });
-
   },
       ///////////// Filter Department ////////////////
       collage: function (frm){
@@ -41,16 +35,7 @@ frappe.ui.form.on('Create Exam', {
           };
         });
       },
-      // doctor: function(frm) {
-      //   frm.set_query('course', function() {
-      //     return {
-      //       filters: {
-      //         doctor: frm.doc.doctor
-      //       }
-      //     };
-      //   });
-      // },
-      ///////////// Fetch Question ////////////////
+
 
       ///////////// Save in Model ////////////////
       after_save(frm) {
@@ -63,9 +48,11 @@ frappe.ui.form.on('Create Exam', {
           }
         })
   },
+
+
   doctor : function(frm) {
     frm.call({
-      method: 'get_filtered_chapters',
+      method: 'get_filtered_course',
       args: {
         doctor: frm.doc.doctor
       },
@@ -77,5 +64,41 @@ frappe.ui.form.on('Create Exam', {
         }
       // }
     });
-  }
+  },
+
+  department : function(frm) {
+    frm.call({
+      method: 'get_filtered_level',
+      args: {
+        department: frm.doc.department
+      },
+      doc: frm.doc,
+      callback: (res) => {
+        let levels = res.message?.levels;
+          frm.set_query('level', () => ({ filters: { name: ['in', levels] } }));
+          // frm.set_value('course', courses);
+        }
+      // }
+    });
+  },
+
+  ///////////////////  Set Total Question /////////////////
+  difficulty_level : function(frm) {
+    frm.call({
+      method: 'get_number_question_list',
+      args: {
+        difficulty_level: frm.doc.difficulty_level
+      },
+      doc: frm.doc,
+      callback: (res) => {
+        let total_question = res.message?.total_question;
+        let number_of_questions = res.message?.number_of_questions;
+
+          frm.set_value('total_question', total_question);
+          frm.set_value('number_of_questions', number_of_questions);
+
+        }
+    });
+  },
+
 });
