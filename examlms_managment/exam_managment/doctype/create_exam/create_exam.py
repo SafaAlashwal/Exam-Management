@@ -14,70 +14,78 @@ class CreateExam(Document):
 	def fetch_question(self):
 		course = self.course
 		exam_type = self.difficulty_level
-		number_models = self.number_of_models
 		total_questions = self.total_question
-
 
 		if exam_type:
 			test_type_doc = frappe.get_doc('Type Setting', exam_type)
 			if test_type_doc.type == 'Number':
 				questions = []
+				existing_questions = set()  # مجموعة لتخزين الأسئلة المجلبة مسبقاً
+
+				# Collect questions of each type
+				questions_by_type = {}
+				for structure in test_type_doc.exam_structure:
+					filters = {
+						'type': structure.type,
+						'custom_course': course,
+						'custom_difficulty_level': structure.question_level,
+					}
+					if self.chapter:
+						filters['custom_chapter'] = ['in', [d.name1 for d in self.chapter]]
+
+					question_names = frappe.get_list('LMS Question', filters=filters, fields=["name", "type", "question"])
+					questions_by_type[structure.type] = question_names
+
+				# Shuffle the questions within each type
+				for question_type, question_names in questions_by_type.items():
+					random.shuffle(question_names)
+					questions_by_type[question_type] = question_names
+
+				# Select questions from each type in a random order
 				total_questions_selected = 0
-
-				if self.random_question:
-
+				while total_questions_selected < total_questions:
 					for structure in test_type_doc.exam_structure:
-						filters = {
-							'type': structure.type,
-							'custom_course': course,
-							'custom_difficulty_level': structure.question_level,
-						}
-						if self.chapter:
-							filters['custom_chapter'] = ['in', [d.name1 for d in self.chapter]]
-
-						question_names = frappe.get_list('LMS Question', filters=filters, fields=["name"])
-						question_names = [q.name for q in question_names]
+						question_names = questions_by_type.get(structure.type, [])
 						if question_names:
-							selected_questions = random.sample(question_names, min(structure.number_of_question * number_models, len(question_names)))
-							# else:
-							# 	selected_questions = question_names[:min(structure.number_of_question, len(question_names))]
-							questions.extend(selected_questions)
-							total_questions_selected += len(selected_questions)
+							question = None
+							if structure.type == "Block":
+								# If the question type is Block, process it first
+								for block_question in question_names:
+									if block_question["name"] not in existing_questions:
+										question = block_question
+										existing_questions.add(block_question["name"])
+										break
+							else:
+								# If the question type is not Block, process as usual
+								for q in question_names:
+									if q["name"] not in existing_questions:
+										question = q
+										existing_questions.add(q["name"])
+										break
 
-				elif not self.random_question:
-					while len(questions) < total_questions:
-						for structure in test_type_doc.exam_structure:
-							filters = {
-								'type': structure.type,
-								'custom_course': course,
-								'custom_difficulty_level': structure.question_level,
-							}
-							if self.chapter:
-								filters['custom_chapter'] = ['in', [d.name1 for d in self.chapter]]
+							if question:
+								questions.append(question)
+								total_questions_selected += 1
+								if total_questions_selected >= total_questions:
+									break
 
-							question_names = frappe.get_list('LMS Question', filters=filters, fields=["name"], order_by="RAND()", limit=structure.number_of_question)
-							questions.extend([q.name for q in question_names])
-							total_questions_selected += len(question_names)
-
-							if len(questions) >= total_questions:
-								break
-				required_questions = sum([structure.number_of_question * number_models for structure in test_type_doc.exam_structure])
-				if self.random_question and total_questions_selected < required_questions:
-					remaining_questions = required_questions - total_questions_selected
-					if self.chapter:
-						frappe.throw(f"A total of {total_questions_selected} questions were selected out of {required_questions} required. There are {remaining_questions} remaining questions and no questions available for the selected chapters.")
+				self.set('total_question_list', [])
+				for question in questions:
+					question_doc = frappe.get_doc('LMS Question', question["name"])
+					if question_doc.type == "Block":
+						# Get the child questions for Block type question
+						block_question = frappe.get_doc('LMS Question', question_doc.name)
+						for sub_question in block_question.custom_question_block:
+							sub_question_doc = frappe.get_doc('LMS Question', sub_question.question)
+							self.append("total_question_list", {
+								"question": sub_question_doc.name,
+								"question_title": sub_question_doc.question,
+								"question_type": sub_question_doc.type,
+								"question_degree": sub_question_doc.custom_degree_question,
+								"difficulty_degree": sub_question_doc.custom_difficulty_level,
+								"block_parent": question_doc.name
+							})
 					else:
-						frappe.throw(f"A total of {total_questions_selected} questions were selected out of {required_questions} required. There are {remaining_questions} remaining questions and no questions available for the selected course.")
-				elif not self.random_question and total_questions_selected < sum([structure.number_of_question for structure in test_type_doc.exam_structure]):
-					remaining_questions = sum([structure.number_of_question for structure in test_type_doc.exam_structure]) - total_questions_selected
-					if self.chapter:
-						frappe.throw(f"A total of {total_questions_selected} questions were selected out of {sum([structure.number_of_question for structure in test_type_doc.exam_structure])} required. There are {remaining_questions} remaining questions and no questions available for the selected chapters.")
-					else:
-						frappe.throw(f"A total of {total_questions_selected} questions were selected out of {sum([structure.number_of_question for structure in test_type_doc.exam_structure])} required. There are {remaining_questions} remaining questions and no questions available for the selected course.")
-				else:
-					self.set('total_question_list', [])
-					for question in questions:
-						question_doc = frappe.get_doc('LMS Question', question)
 						self.append("total_question_list", {
 							"question": question_doc.name,
 							"question_title": question_doc.question,
@@ -88,64 +96,10 @@ class CreateExam(Document):
 		else:
 			# Handle other exam types
 			pass
-	# def fetch_question(self):
-	# 	course = self.course
-	# 	exam_type = self.difficulty_level
-	# 	number_models = self.number_of_models
-	# 	total_questions = self.total_question
 
-		
-		# if exam_type:
-		# 	test_type_doc = frappe.get_doc('Type Setting', exam_type)
-		# 	if test_type_doc.type == 'Number':
-		# 		questions = []
-		# 		total_questions_selected = 0
 
-		# 		while len(questions) < total_questions:
-		# 			for structure in test_type_doc.exam_structure:
-		# 				filters = {
-		# 					'type': structure.type,
-		# 					'custom_course': course,
-		# 					'custom_difficulty_level': structure.question_level,
-		# 				}
-		# 				if self.chapter:
-		# 					filters['custom_chapter'] = ['in', [d.name1 for d in self.chapter]]
 
-		# 				if self.random_question:
-		# 					question_names = frappe.get_list('LMS Question', filters=filters, fields=["name"], order_by="RAND()")
-		# 					question_names = [q.name for q in question_names]
-		# 					selected_questions = question_names[:min(structure.number_of_question * number_models, len(question_names))]
-		# 				else:
-		# 					question_names = frappe.get_list('LMS Question', filters=filters, fields=["name"])
-		# 					question_names = [q.name for q in question_names]
-		# 					selected_questions = question_names[:min(structure.number_of_question, len(question_names))]
 
-		# 				questions.extend(selected_questions)
-		# 				total_questions_selected += len(selected_questions)
-
-		# 				if len(questions) >= total_questions:
-		# 					break
-
-		# 		if total_questions_selected < total_questions:
-		# 			remaining_questions = total_questions - total_questions_selected
-		# 			if self.chapter:
-		# 				frappe.throw(f"A total of {total_questions_selected} questions were selected out of {total_questions} required. There are {remaining_questions} remaining questions and no questions available for the selected chapters.")
-		# 			else:
-		# 				frappe.throw(f"A total of {total_questions_selected} questions were selected out of {total_questions} required. There are {remaining_questions} remaining questions and no questions available for the selected course.")
-		# 		else:
-		# 			self.set('total_question_list', [])
-		# 			for question in questions[:total_questions]:
-		# 				question_doc = frappe.get_doc('LMS Question', question)
-		# 				self.append("total_question_list", {
-		# 					"question": question_doc.name,
-		# 					"question_title": question_doc.question,
-		# 					"question_type": question_doc.type,
-		# 					"question_degree": question_doc.custom_degree_question,
-		# 					"difficulty_degree": question_doc.custom_difficulty_level,
-		# 				})
-		# else:
-		# 	# Handle other exam types
-		# 	pass
 	@frappe.whitelist()
 	def get_filtered_course(self, doctor):
 		doctor_doc = frappe.get_doc("Doctor", doctor)

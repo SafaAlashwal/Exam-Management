@@ -100,5 +100,4 @@ frappe.ui.form.on('Create Exam', {
         }
     });
   },
-
 });
