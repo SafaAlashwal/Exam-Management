@@ -34,33 +34,21 @@ def Add_Model():
                 "course": create_exam_doc.course
             })
 
-            for model_data in existing_models:
-                model_doc = frappe.get_doc("Model", model_data.name)
-                del model_doc.question[:]
-                model_questions = []
+            def get_selected_questions(available_questions, num_needed):
+                if random_question:
+                    if len(available_questions) < num_needed:
+                        frappe.msgprint("Not enough questions available to generate unique models")
+                        return None
+                    selected_questions = random.sample(available_questions, num_needed)
+                    for question in selected_questions:
+                        available_questions.remove(question)
+                else:
+                    selected_questions = available_questions[:num_needed]
+                    random.shuffle(selected_questions)
+                return selected_questions
 
-                for type_setting in type_setting_doc.exam_structure:
-                    available_questions = questions_by_type[type_setting.type]
-                    if random_question:
-                        if len(available_questions) < type_setting.number_of_question:
-                            frappe.msgprint("Not enough questions available to generate unique models")
-                            return
-                        # Get a unique set of questions for this model
-                        selected_questions = random.sample(available_questions, type_setting.number_of_question)
-                        # Remove selected questions from the available pool
-                        for question in selected_questions:
-                            available_questions.remove(question)
-                    else:
-                        # Use the same questions but shuffle their order
-                        selected_questions = available_questions[:type_setting.number_of_question]
-                        random.shuffle(selected_questions)
-
-                    model_questions.extend(selected_questions)
-
-                # Shuffle the final list of questions for each model
-                random.shuffle(model_questions)
-
-                for question in model_questions[:num_questions]:
+            def add_questions_to_model(model_doc, selected_questions):
+                for question in selected_questions:
                     model_doc.append("question", {
                         "question": question.question,
                         "question_title": question.question_title,
@@ -68,12 +56,26 @@ def Add_Model():
                         "question_degree": question.question_degree,
                         "difficulty_degree": question.difficulty_degree,
                     })
+                model_doc.number_of_questions = num_questions
 
-                model_doc.number_of_questions = num_questions  # Update number_of_questions
+            for model_data in existing_models:
+                model_doc = frappe.get_doc("Model", model_data.name)
+                del model_doc.question[:]
+                model_questions = []
+
+                for type_setting in type_setting_doc.exam_structure:
+                    available_questions = questions_by_type[type_setting.type]
+                    if available_questions:
+                        selected_questions = get_selected_questions(available_questions, type_setting.number_of_question)
+                        if selected_questions is None:
+                            return
+                        model_questions.extend(selected_questions)
+
+                random.shuffle(model_questions)
+                add_questions_to_model(model_doc, model_questions)
                 model_doc.save()
                 frappe.db.commit()
 
-            # Create new models if needed
             new_models_count = max(0, num_models - len(existing_models))
             for _ in range(new_models_count):
                 model_doc = frappe.new_doc("Model")
@@ -84,40 +86,20 @@ def Add_Model():
                 model_doc.course = create_exam_doc.course
                 model_doc.id_exam = create_exam_doc.name
                 model_doc.difficulty_level = create_exam_doc.difficulty_level
-                model_doc.number_of_questions = num_questions  # Set number_of_questions for new models
+                model_doc.number_of_questions = num_questions
 
                 model_questions = []
 
                 for type_setting in type_setting_doc.exam_structure:
                     available_questions = questions_by_type[type_setting.type]
-                    if random_question:
-                        if len(available_questions) < type_setting.number_of_question:
-                            frappe.msgprint("Not enough questions available to generate unique models")
+                    if available_questions:
+                        selected_questions = get_selected_questions(available_questions, type_setting.number_of_question)
+                        if selected_questions is None:
                             return
-                        # Get a unique set of questions for this model
-                        selected_questions = random.sample(available_questions, type_setting.number_of_question)
-                        # Remove selected questions from the available pool
-                        for question in selected_questions:
-                            available_questions.remove(question)
-                    else:
-                        # Use the same questions but shuffle their order
-                        selected_questions = available_questions[:type_setting.number_of_question]
-                        random.shuffle(selected_questions)
+                        model_questions.extend(selected_questions)
 
-                    model_questions.extend(selected_questions)
-
-                # Shuffle the final list of questions for each model
                 random.shuffle(model_questions)
-
-                for question in model_questions[:num_questions]:
-                    model_doc.append("question", {
-                        "question": question.question,
-                        "question_title": question.question_title,
-                        "question_type": question.question_type,
-                        "question_degree": question.question_degree,
-                        "difficulty_degree": question.difficulty_degree,
-                    })
-
+                add_questions_to_model(model_doc, model_questions)
                 model_doc.insert()
                 frappe.db.commit()
 
@@ -125,6 +107,3 @@ def Add_Model():
             frappe.msgprint("No questions available")
     else:
         frappe.msgprint("No Create Exam documents found")
-
-
-

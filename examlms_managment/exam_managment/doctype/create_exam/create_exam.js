@@ -12,30 +12,62 @@ frappe.ui.form.on('Create Exam', {
             }
         });
   });
-  },
-      ///////////// Filter Department ////////////////
-      collage: function (frm){
-        console.log(frm.doc.collage);
-        frm.set_query("department", function() {
-          return {
-            "filters": {
-              "collage": frm.doc.collage
-            }
-          };
-        });
-      },
+
+
+        ///////////// Filter Department ////////////////
+  frm.set_query("department", function() {
+    return {
+      "filters": {
+        "collage": frm.doc.collage
+      }
+    };
+  });
+
+
 
       ///////////// Filter Chapter ////////////////
-      course: function(frm) {
-        frm.set_query('name1', 'chapter', function() {
-          return {
-            filters: {
-              course: frm.doc.course
-            }
-          };
-        });
-      },
+  frm.set_query('name1', 'chapter', function() {
+    return {
+      filters: {
+        course: frm.doc.course
+      }
+    };
+  });
 
+
+
+    ///////////// Filter Course ////////////////
+  frm.call({
+    method: 'get_filtered_course',
+    args: {
+      doctor: frm.doc.doctor
+    },
+    doc: frm.doc,
+    callback: (res) => {
+      let courses = res.message?.courses;
+        frm.set_query('course', () => ({ filters: { name: ['in', courses] } }));
+        // frm.set_value('course', courses);
+      }
+    // }
+  });
+
+      ///////////// Filter Levels ////////////////
+  frm.call({
+    method: 'get_filtered_level',
+    args: {
+      department: frm.doc.department
+    },
+    doc: frm.doc,
+    callback: (res) => {
+      let levels = res.message?.levels;
+        frm.set_query('level', () => ({ filters: { name: ['in', levels] } }));
+        // frm.set_value('course', courses);
+      }
+    // }
+  });
+
+
+  },
 
       ///////////// Save in Model ////////////////
       after_save(frm) {
@@ -50,37 +82,6 @@ frappe.ui.form.on('Create Exam', {
   },
 
 
-  doctor : function(frm) {
-    frm.call({
-      method: 'get_filtered_course',
-      args: {
-        doctor: frm.doc.doctor
-      },
-      doc: frm.doc,
-      callback: (res) => {
-        let courses = res.message?.courses;
-          frm.set_query('course', () => ({ filters: { name: ['in', courses] } }));
-          // frm.set_value('course', courses);
-        }
-      // }
-    });
-  },
-
-  department : function(frm) {
-    frm.call({
-      method: 'get_filtered_level',
-      args: {
-        department: frm.doc.department
-      },
-      doc: frm.doc,
-      callback: (res) => {
-        let levels = res.message?.levels;
-          frm.set_query('level', () => ({ filters: { name: ['in', levels] } }));
-          // frm.set_value('course', courses);
-        }
-      // }
-    });
-  },
 
   ///////////////////  Set Total Question /////////////////
   difficulty_level : function(frm) {

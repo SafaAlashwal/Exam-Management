@@ -21,6 +21,7 @@ class CreateExam(Document):
 			if test_type_doc.type == 'Number':
 				questions = []
 				existing_questions = set()  # مجموعة لتخزين الأسئلة المجلبة مسبقاً
+				sub_questions_added = set()  # مجموعة لتخزين الأسئلة الفرعية المضافة من داخل Block
 
 				# Collect questions of each type
 				questions_by_type = {}
@@ -41,6 +42,15 @@ class CreateExam(Document):
 					random.shuffle(question_names)
 					questions_by_type[question_type] = question_names
 
+				# Check if there are enough questions
+				total_available_questions = sum(len(questions) for questions in questions_by_type.values())
+				required_questions = sum([structure.number_of_question for structure in test_type_doc.exam_structure])
+				if total_available_questions < required_questions:
+					if self.chapter:
+						frappe.throw(f"A total of {total_available_questions} questions were found out of {total_questions} required for the selected chapters.")
+					else:
+						frappe.throw(f"A total of {total_available_questions} questions were found out of {total_questions} required for the selected course.")
+
 				# Select questions from each type in a random order
 				total_questions_selected = 0
 				while total_questions_selected < total_questions:
@@ -58,14 +68,26 @@ class CreateExam(Document):
 							else:
 								# If the question type is not Block, process as usual
 								for q in question_names:
-									if q["name"] not in existing_questions:
+									if q["name"] not in existing_questions and q["name"] not in sub_questions_added:
 										question = q
 										existing_questions.add(q["name"])
 										break
 
 							if question:
-								questions.append(question)
-								total_questions_selected += 1
+								if structure.type == "Block":
+									# Get the number of sub-questions in the block
+									block_question_doc = frappe.get_doc('LMS Question', question["name"])
+									num_sub_questions = len(block_question_doc.custom_question_block)
+									if total_questions_selected + num_sub_questions <= total_questions:
+										questions.append(question)
+										total_questions_selected += num_sub_questions
+										# Add sub-questions to the set of added questions to avoid duplicates
+										for sub_question in block_question_doc.custom_question_block:
+											sub_questions_added.add(sub_question.question)
+								else:
+									questions.append(question)
+									total_questions_selected += 1
+
 								if total_questions_selected >= total_questions:
 									break
 
@@ -99,7 +121,6 @@ class CreateExam(Document):
 
 
 
-
 	@frappe.whitelist()
 	def get_filtered_course(self, doctor):
 		doctor_doc = frappe.get_doc("Doctor", doctor)
@@ -119,13 +140,19 @@ class CreateExam(Document):
 	@frappe.whitelist()
 	def get_number_question_list(self, difficulty_level):
 		doc = frappe.get_doc("Type Setting", difficulty_level)
-		total_questions = sum(row.number_of_question for row in doc.exam_structure)
-			
+		total_questions = 0
+		for row in doc.exam_structure:
+			if row.type == "Block":
+				block_questions = frappe.get_all("LMS Question", filters={
+					"type": "Block",
+					"custom_difficulty_level": row.question_level
+				})
+				total_questions += len(block_questions)
+			else:
+				total_questions += row.number_of_question
+		
 		question_details = {
 			"total_question": total_questions,
 			"number_of_questions": total_questions
 		}
 		return question_details
-
-
-
