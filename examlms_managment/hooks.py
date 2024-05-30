@@ -118,7 +118,8 @@ override_doctype_class = {
 
 doc_events = {
 	"LMS Question": {
-		"after_insert": "examlms_managment.override.question.after_insert",
+        "on_update":"examlms_managment.override.question.on_update",
+        "on_trash":"examlms_managment.override.question.on_trash"
 	}
 }
 

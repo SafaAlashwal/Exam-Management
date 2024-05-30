@@ -34,39 +34,6 @@ frappe.ui.form.on('Create Exam', {
     };
   });
 
-
-
-    ///////////// Filter Course ////////////////
-  frm.call({
-    method: 'get_filtered_course',
-    args: {
-      doctor: frm.doc.doctor
-    },
-    doc: frm.doc,
-    callback: (res) => {
-      let courses = res.message?.courses;
-        frm.set_query('course', () => ({ filters: { name: ['in', courses] } }));
-        // frm.set_value('course', courses);
-      }
-    // }
-  });
-
-      ///////////// Filter Levels ////////////////
-  frm.call({
-    method: 'get_filtered_level',
-    args: {
-      department: frm.doc.department
-    },
-    doc: frm.doc,
-    callback: (res) => {
-      let levels = res.message?.levels;
-        frm.set_query('level', () => ({ filters: { name: ['in', levels] } }));
-        // frm.set_value('course', courses);
-      }
-    // }
-  });
-
-
   },
 
       ///////////// Save in Model ////////////////
@@ -80,9 +47,39 @@ frappe.ui.form.on('Create Exam', {
           }
         })
   },
-
-
-
+  department: function(frm){
+     ///////////// Filter Levels ////////////////
+     frm.call({
+      method: 'get_filtered_level',
+      args: {
+        department: frm.doc.department
+      },
+      doc: frm.doc,
+      callback: (res) => {
+        let levels = res.message?.levels;
+          frm.set_query('level', () => ({ filters: { name: ['in', levels] } }));
+          // frm.set_value('course', courses);
+        }
+      // }
+    });
+  
+  },
+    ///////////// Filter Course ////////////////
+    doctor : function(frm){
+    frm.call({
+      method: 'get_filtered_course',
+      args: {
+        doctor: frm.doc.doctor
+      },
+      doc: frm.doc,
+      callback: (res) => {
+        let courses = res.message?.courses;
+          frm.set_query('course', () => ({ filters: { name: ['in', courses] } }));
+          // frm.set_value('course', courses);
+        }
+      // }
+    });
+  },
   ///////////////////  Set Total Question /////////////////
   difficulty_level : function(frm) {
     frm.call({

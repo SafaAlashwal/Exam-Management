@@ -1,0 +1,102 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"gfUCf3Pm5I\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Exam Management</span>\",\"col\":12}},{\"id\":\"JC2YZ9P-Xx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Course\",\"col\":3}},{\"id\":\"ie1kemyA8j\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chapter\",\"col\":3}},{\"id\":\"JJ4sfsRk-c\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Doctor\",\"col\":3}},{\"id\":\"36MzjYMLOU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lms Question\",\"col\":3}},{\"id\":\"z4Wwvftmxq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create Exam\",\"col\":3}},{\"id\":\"hA_-g8Dlv0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Model\",\"col\":3}},{\"id\":\"Zy8-CHVAe8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Type Settings\",\"col\":3}},{\"id\":\"_0TsgOEWBz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Collage\",\"col\":3}},{\"id\":\"E-12T5wAvB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Department\",\"col\":3}}]",
+ "creation": "2024-05-12 03:34:30.914726",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "heart-active",
+ "idx": 0,
+ "indicator_color": "blue",
+ "is_hidden": 0,
+ "label": "Exam Management",
+ "links": [],
+ "modified": "2024-05-31 02:05:55.689703",
+ "modified_by": "Administrator",
+ "module": "Exam Managment",
+ "name": "Exam Management",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Create Exam",
+   "link_to": "Create Exam",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Lms Question",
+   "link_to": "LMS Question",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Doctor",
+   "link_to": "Doctor",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Model",
+   "link_to": "Model",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Collage",
+   "link_to": "Collage",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Type Settings",
+   "link_to": "Type Setting",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Course",
+   "link_to": "Course",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Department",
+   "link_to": "Department",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Chapter",
+   "link_to": "Chapter",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Exam Management"
+}

@@ -2,6 +2,8 @@ import frappe
 from frappe import _
 
 from lms.lms.doctype.lms_question.lms_question import LMSQuestion
+# from  import on_update, on_trash
+
 from frappe.model.document import Document
 
 
@@ -10,12 +12,8 @@ class LMSQuestion(Document):
 	def validate(self):
 		validate_correct_answers(self)
 		validate_possible_block(self)
+		validate_question_block(self)
 
-
-# def validate_possible_block(question):
-# 	questions = question.question
-# 	for d in questions:
-# 		frappe.msgprint(d)
 
 
 def validate_correct_answers(question):
@@ -82,30 +80,80 @@ def get_correct_options(question):
 			correct_options.append(field)
 
 	return correct_options
+# Add a global flag to prevent recursive calls
+is_updating_subquestions = False
 
+def validate_question_block(question):
+    global is_updating_subquestions
+    
+    if is_updating_subquestions:
+        return
 
-def after_insert(doc,event):
-    # print(f"\n\n\n{doc} , {event}")
-		frappe.msgprint("Done")
-		# properties = frappe.get_all("LMS Question", fields=["*"], filters={})   
-		# s= properties['question']
-		# frappe.msgprint(s)
+    if question.type != "Block":
+        return
 
+    try:
+        is_updating_subquestions = True
+        
+        # Get the child questions from the Question Block
+        child_questions = frappe.get_all("Question Block", 
+                                        filters={"parent": question.name}, 
+                                        fields=["question"])
+
+        child_question_names = [child_question.question for child_question in child_questions]
+
+        # Iterate through the child questions and update custom_is_subquestion
+        for child_question in child_question_names:
+            child_question_doc = frappe.get_doc("LMS Question", child_question)
+            if child_question_doc.custom_is_subquestion != 1:
+                child_question_doc.custom_is_subquestion = 1
+                child_question_doc.save()
+
+        # Mark other questions in the same block as not subquestions
+        all_questions_in_block = frappe.get_all("LMS Question",
+                                                filters={"name": ("!=", question.name)},
+                                                fields=["name"])
+        
+        for other_question in all_questions_in_block:
+            if other_question.name not in child_question_names:
+                other_question_doc = frappe.get_doc("LMS Question", other_question.name)
+                if other_question_doc.custom_is_subquestion != 0:
+                    other_question_doc.custom_is_subquestion = 0
+                    other_question_doc.save()
+
+    finally:
+        is_updating_subquestions = False
+
+def on_update(doc, method):
+    # Handle the update of subquestions when the main question is updated
+    validate_question_block(doc)
+
+def on_trash(doc, method):
+    # Handle the deletion of the main question by marking subquestions as not subquestions
+    if doc.type == "Block":
+        child_questions = frappe.get_all("Question Block", 
+                                         filters={"parent": doc.name}, 
+                                         fields=["question"])
+        
+        for child_question in child_questions:
+            child_question_doc = frappe.get_doc("LMS Question", child_question.question)
+            child_question_doc.custom_is_subquestion = 0
+            child_question_doc.save()
 
 # # استعلام للحصول على الأسئلة التي يكون نوعها Block
-# block_questions = frappe.get_all("LMS Question", filters={"type": "Block"}, fields=["name"])
+		# block_questions = frappe.get_all("LMS Question", filters={"type": "Block"}, fields=["name"])
 
-# # قائمة لتخزين الأسئلة الداخلية
-# internal_questions = []
+		# # قائمة لتخزين الأسئلة الداخلية
+		# internal_questions = []
 
-# # الحصول على الأسئلة الداخلية
-# for question in block_questions:
-#     child_questions = frappe.get_all("Question Block", filters={"parent": question.name}, fields=["name"])
-#     internal_questions.extend(child_questions)
+		# # الحصول على الأسئلة الداخلية
+		# for question in block_questions:
+		# 	child_questions = frappe.get_all("Question Block", filters={"parent": question.name}, fields=["name"])
+		# 	internal_questions.extend(child_questions)
 
-# # طباعة الأسئلة الداخلية
-# for question in internal_questions:
-#     print(question.name)
+		# # طباعة الأسئلة الداخلية
+		# for question in internal_questions:
+		# 	frappe.msgprint(question.name)
 
 def validate_possible_block(question):
 	# السؤال الخارجي

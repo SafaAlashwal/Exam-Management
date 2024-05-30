@@ -47,21 +47,51 @@ def Add_Model():
                     random.shuffle(selected_questions)
                 return selected_questions
 
-            def add_questions_to_model(model_doc, selected_questions):
+            def add_questions_to_model(model_doc, selected_questions, added_questions_set):
                 for question in selected_questions:
-                    model_doc.append("question", {
-                        "question": question.question,
-                        "question_title": question.question_title,
-                        "question_type": question.question_type,
-                        "question_degree": question.question_degree,
-                        "difficulty_degree": question.difficulty_degree,
-                    })
+                    if question.question_type == "Block":
+                        # Adding the block question and its sub-questions
+                        block_parent_name = question.question
+                        sub_questions = [q for q in question_list if q.block_parent == block_parent_name]
+                        if block_parent_name not in added_questions_set:
+                            model_doc.append("question", {
+                                "question": question.question,
+                                "question_title": question.question_title,
+                                "question_type": question.question_type,
+                                "question_degree": question.question_degree,
+                                "difficulty_degree": question.difficulty_degree,
+                                "block_parent": None  # No parent for the block itself
+                            })
+                            added_questions_set.add(block_parent_name)
+                        for sub_question in sub_questions:
+                            if sub_question.question not in added_questions_set:
+                                model_doc.append("question", {
+                                    "question": sub_question.question,
+                                    "question_title": sub_question.question_title,
+                                    "question_type": sub_question.question_type,
+                                    "question_degree": sub_question.question_degree,
+                                    "difficulty_degree": sub_question.difficulty_degree,
+                                    "block_parent": block_parent_name  # Parent block name
+                                })
+                                added_questions_set.add(sub_question.question)
+                    else:
+                        if question.question not in added_questions_set:
+                            model_doc.append("question", {
+                                "question": question.question,
+                                "question_title": question.question_title,
+                                "question_type": question.question_type,
+                                "question_degree": question.question_degree,
+                                "difficulty_degree": question.difficulty_degree,
+                                "block_parent": question.block_parent
+                            })
+                            added_questions_set.add(question.question)
                 model_doc.number_of_questions = num_questions
 
             for model_data in existing_models:
                 model_doc = frappe.get_doc("Model", model_data.name)
                 del model_doc.question[:]
                 model_questions = []
+                added_questions_set = set()
 
                 for type_setting in type_setting_doc.exam_structure:
                     available_questions = questions_by_type[type_setting.type]
@@ -72,7 +102,7 @@ def Add_Model():
                         model_questions.extend(selected_questions)
 
                 random.shuffle(model_questions)
-                add_questions_to_model(model_doc, model_questions)
+                add_questions_to_model(model_doc, model_questions, added_questions_set)
                 model_doc.save()
                 frappe.db.commit()
 
@@ -89,6 +119,7 @@ def Add_Model():
                 model_doc.number_of_questions = num_questions
 
                 model_questions = []
+                added_questions_set = set()
 
                 for type_setting in type_setting_doc.exam_structure:
                     available_questions = questions_by_type[type_setting.type]
@@ -99,7 +130,7 @@ def Add_Model():
                         model_questions.extend(selected_questions)
 
                 random.shuffle(model_questions)
-                add_questions_to_model(model_doc, model_questions)
+                add_questions_to_model(model_doc, model_questions, added_questions_set)
                 model_doc.insert()
                 frappe.db.commit()
 
@@ -107,3 +138,4 @@ def Add_Model():
             frappe.msgprint("No questions available")
     else:
         frappe.msgprint("No Create Exam documents found")
+
