@@ -43,7 +43,7 @@ frappe.ui.form.on('Create Exam', {
           // doc: frm.doc,
           // args: { "self": self },
           callback: () => {
-            frappe.msgprint("Done")
+            // frappe.msgprint("Done")
           }
         })
   },
