@@ -11,6 +11,7 @@ class CreateExam(Document):
             #     frappe.throw("Error: Number of Questions is larger than Total Questions")
 
         @frappe.whitelist()
+
         def fetch_question(self):
             course = self.course
             exam_type = self.difficulty_level
@@ -61,7 +62,12 @@ class CreateExam(Document):
 
                     # Check if the available questions are less than the required questions
                     if num_questions < total_questions:
-                        frappe.throw(f"Only {num_questions} questions are available out of the required {total_questions}.")
+                        if self.chapter:
+                            chapter_names = [d.name1 for d in self.chapter]
+                            frappe.throw(f"Only {num_questions} questions are available for the selected course '{course}' and chapters '{', '.join(chapter_names)}' out of the required {total_questions}.")
+                        else:
+                            frappe.throw(f"Only {num_questions} questions are available for the selected course '{course}' out of the required {total_questions}.")
+                        return
 
                     # Shuffle questions within each structure
                     for question_type, structure_question_names in questions_by_structure.items():
