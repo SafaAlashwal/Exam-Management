@@ -12,7 +12,6 @@ class LMSQuestion(Document):
 	def validate(self):
 		validate_correct_answers(self)
 		validate_possible_block(self)
-		validate_question_block(self)
 
 
 
@@ -80,65 +79,33 @@ def get_correct_options(question):
 			correct_options.append(field)
 
 	return correct_options
-# Add a global flag to prevent recursive calls
-is_updating_subquestions = False
 
-def validate_question_block(question):
-    global is_updating_subquestions
-    
-    if is_updating_subquestions:
-        return
 
-    if question.type != "Block":
-        return
 
+def update_subquestion_flag(lms_question):
+    if lms_question.custom_is_subquestion == 0:
+        frappe.set_value("LMS Question", lms_question.name, "custom_is_subquestion", 1)
+        frappe.log(f"Updated custom_is_subquestion flag for question: {lms_question.name}")
+
+def validate_question_block(doc, method):
     try:
-        is_updating_subquestions = True
-        
-        # Get the child questions from the Question Block
-        child_questions = frappe.get_all("Question Block", 
-                                        filters={"parent": question.name}, 
-                                        fields=["question"])
+        frappe.log("Fetching all question blocks...")
+        question_block_names = frappe.get_all("Question Block", pluck="name")
+        frappe.log(f"Found {len(question_block_names)} question blocks")
 
-        child_question_names = [child_question.question for child_question in child_questions]
+        lms_questions = frappe.get_all("LMS Question",
+                                       filters={"name": ["in", question_block_names]},
+                                       fields=["name", "custom_is_subquestion"])
 
-        # Iterate through the child questions and update custom_is_subquestion
-        for child_question in child_question_names:
-            child_question_doc = frappe.get_doc("LMS Question", child_question)
-            if child_question_doc.custom_is_subquestion != 1:
-                child_question_doc.custom_is_subquestion = 1
-                child_question_doc.save()
+        for lms_question in lms_questions:
+            frappe.log(f"LMS Question: {lms_question.name}, Question Type: {lms_question.custom_is_subquestion}")
+            update_subquestion_flag(lms_question)
 
-        # Mark other questions in the same block as not subquestions
-        all_questions_in_block = frappe.get_all("LMS Question",
-                                                filters={"name": ("!=", question.name)},
-                                                fields=["name"])
-        
-        for other_question in all_questions_in_block:
-            if other_question.name not in child_question_names:
-                other_question_doc = frappe.get_doc("LMS Question", other_question.name)
-                if other_question_doc.custom_is_subquestion != 0:
-                    other_question_doc.custom_is_subquestion = 0
-                    other_question_doc.save()
+    except Exception as e:
+        frappe.log(f"Error validating question block: {e}")
 
-    finally:
-        is_updating_subquestions = False
 
-def on_update(doc, method):
-    # Handle the update of subquestions when the main question is updated
-    validate_question_block(doc)
 
-def on_trash(doc, method):
-    # Handle the deletion of the main question by marking subquestions as not subquestions
-    if doc.type == "Block":
-        child_questions = frappe.get_all("Question Block", 
-                                         filters={"parent": doc.name}, 
-                                         fields=["question"])
-        
-        for child_question in child_questions:
-            child_question_doc = frappe.get_doc("LMS Question", child_question.question)
-            child_question_doc.custom_is_subquestion = 0
-            child_question_doc.save()
 
 # # استعلام للحصول على الأسئلة التي يكون نوعها Block
 		# block_questions = frappe.get_all("LMS Question", filters={"type": "Block"}, fields=["name"])
