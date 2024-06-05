@@ -25,7 +25,7 @@
    "fieldname": "type",
    "fieldtype": "Select",
    "label": "Type",
-   "options": "Parcentage\nNumber"
+   "options": "Percentage\nNumber"
   },
   {
    "depends_on": "eval: doc.type == 'Parcentage'",
@@ -50,7 +50,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-19 11:43:40.551920",
+ "modified": "2024-06-04 17:18:48.408336",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Type Setting",

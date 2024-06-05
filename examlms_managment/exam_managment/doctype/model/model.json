@@ -19,7 +19,8 @@
   "column_break_alhn",
   "number_of_questions",
   "section_break_qndn",
-  "question"
+  "question",
+  "amended_from"
  ],
  "fields": [
   {
@@ -88,11 +89,21 @@
   {
    "fieldname": "column_break_alhn",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Model",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-26 23:55:13.137050",
+ "modified": "2024-06-05 17:52:08.757717",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Model",

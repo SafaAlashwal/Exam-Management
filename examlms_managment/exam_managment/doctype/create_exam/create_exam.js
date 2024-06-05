@@ -37,16 +37,17 @@ frappe.ui.form.on('Create Exam', {
   },
 
       ///////////// Save in Model ////////////////
-      after_save(frm) {
+      on_submit(frm) {
         frm.call({
-          method: "examlms_managment.exam_managment.doctype.model.model.Add_Model",
-          // doc: frm.doc,
-          // args: { "self": self },
-          callback: () => {
-            // frappe.msgprint("Done")
-          }
+            method: "examlms_managment.exam_managment.doctype.model.model.Add_Model",
+            args: {
+                create_exam_doc_name: frm.doc.name  // تمرير اسم المستند كوسيطة
+            },
+            callback: () => {
+                // frappe.msgprint("Done")
+            }
         })
-  },
+    },    
   department: function(frm){
      ///////////// Filter Levels ////////////////
      frm.call({
