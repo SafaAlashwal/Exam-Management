@@ -1,71 +1,51 @@
-import path from 'path'
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import frappeui from 'frappe-ui/vite'
-import proxyOptions from "./proxyOptions";
+import { defineConfig } from "vite"
+import vue from "@vitejs/plugin-vue"
+import path from "path"
+import { webserver_port } from "../../../sites/common_site_config.json"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [frappeui(), vue()],
+  plugins: [vue()],
   server: {
+    host: true,
     port: 8080,
-    proxy: proxyOptions,
+    proxy: {
+      "^/(app|login|api|assets|files)": {
+        // Localhost resolution changes in Node 17
+        target: `http://127.0.0.1:${webserver_port}`,
+        ws: true,
+        router: function (req) {
+          const site_name = req.headers.host.split(":")[0]
+          return `http://${site_name}:${webserver_port}`
+        },
+      },
+    },
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      "@": path.resolve(__dirname, "src"),
+      "tailwind.config.js": path.resolve(__dirname, "tailwind.config.js"),
     },
   },
   build: {
-    outDir: `../${path.basename(path.resolve('..'))}/public/frontend`,
+    sourcemap: true,
+    outDir: `../${path.basename(path.resolve(".."))}/public/frontend`,
     emptyOutDir: true,
-    target: 'es2015',
+    target: "esnext",
+    commonjsOptions: {
+      include: [/tailwind.config.js/, /node_modules/],
+    },
   },
   optimizeDeps: {
-    include: ['frappe-ui > feather-icons', 'showdown', 'engine.io-client'],
+    esbuildOptions: { target: "esnext" },
+    include: [
+      "frappe-ui",
+      "feather-icons",
+      "showdown",
+      "prosemirror",
+      "tiptap",
+      "engine.io-client",
+      "tailwind.config.js",
+    ],
   },
 })
-
-// proxyOptions.ts
-// const common_site_config = require("../../../sites/common_site_config.json");
-// const { webserver_port } = common_site_config;
-
-// export default {
-//   "^/(app|api|assets|files|private)": {
-//     target: `https://127.0.0.1:${webserver_port}`,
-//     ws: true,
-//     router: function (req) {
-//       const site_name = req.headers.host.split(":")[0];
-//       return `https://${site_name}`;
-//     },
-//   },
-// };
-
-
-// import { defineConfig } from 'vite'
-// import vue from '@vitejs/plugin-vue'
-// import path from 'path'
-// import { getProxyOptions } from 'frappe-ui/src/utils/vite-dev-server'
-// import { webserver_port } from '../../../sites/common_site_config.json'
-
-// // https://vitejs.dev/config/
-// export default defineConfig({
-//   plugins: [vue()],
-//   // server: {
-//   //   port: 8080,
-//   //   proxy: getProxyOptions({ port: webserver_port }),
-//   // },
-//   resolve: {
-//     alias: {
-//       '@': path.resolve(__dirname, 'src'),
-//     },
-//   },
-//   build: {
-//     outDir: `../${path.basename(path.resolve('..'))}/public/frontend`,
-//     emptyOutDir: true,
-//     target: 'es2015',
-//   },
-//   optimizeDeps: {
-//     include: ['frappe-ui > feather-icons', 'showdown', 'engine.io-client'],
-//   },
-// })

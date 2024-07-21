@@ -14,19 +14,27 @@
   "column_break_hsci",
   "doctor",
   "course",
+  "section_break_fkll",
+  "start_time",
+  "exam_duration",
+  "column_break_gdhd",
+  "end_time",
   "section_break_yupg",
   "chapter",
   "section_break_gxfp",
   "difficulty_level",
-  "random_question",
   "column_break_esjo",
   "number_of_models",
   "column_break_drca",
   "number_of_questions",
+  "column_break_bpmd",
+  "random_question",
+  "random_answer",
   "section_break_ktvm",
   "total_question",
   "total_question_list",
-  "amended_from"
+  "amended_from",
+  "password"
  ],
  "fields": [
   {
@@ -155,12 +163,50 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "label": "Password"
+  },
+  {
+   "fieldname": "section_break_fkll",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Datetime",
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Datetime",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "exam_duration",
+   "fieldtype": "Duration",
+   "label": "Exam Duration"
+  },
+  {
+   "fieldname": "column_break_gdhd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_bpmd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "random_answer",
+   "fieldtype": "Check",
+   "label": "Random Answer"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-06-05 17:27:16.313935",
+ "modified": "2024-07-18 01:25:20.210892",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Create Exam",

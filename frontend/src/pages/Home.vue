@@ -1,37 +1,26 @@
 <template>
-  <div class="max-w-3xl py-12 mx-auto">
-    <h2 class="font-bold text-lg text-gray-600 mb-4">
-      Welcome {{ session.user }}!
-    </h2>
-
-    <Button theme="gray" variant="solid" icon-left="code" @click="ping.fetch" :loading="ping.loading">
-      Click to send 'ping' request
-    </Button>
-    <div>
-      {{ ping.data }}
+  <div class="space-y-4">
+    <div
+      class="flex items-center justify-between"
+      v-for="item in departmentsObj.data"
+      :key="item.department"
+    >
+      <div>
+        {{ item.department }}
+      </div>
+      <Badge>{{ item }}</Badge>
     </div>
-    <pre>{{ ping }}</pre>
-
-    <div class="flex flex-row space-x-2 mt-4">
-      <Button @click="showDialog = true">Open Dialog</Button>
-      <Button @click="session.logout.submit()">Logout</Button>
-    </div>
-
-    <!-- Dialog -->
-    <Dialog title="Title" v-model="showDialog"> Dialog content </Dialog>
   </div>
+  <Button @click="departmentsObj.next()"> Next Page </Button>
 </template>
-
 <script setup>
-import { ref } from 'vue'
-import { Dialog } from 'frappe-ui'
-import { createResource } from 'frappe-ui'
-import { session } from '../data/session'
-
-const ping = createResource({
-  url: 'ping',
-  auto: true,
+import { createListResource } from 'frappe-ui'
+let departmentsObj = createListResource({
+  doctype: 'Department',
+  fields: ['department'],
+  orderBy: 'department desc',
+  start: 0,
+  pageLength: 5,
 })
-
-const showDialog = ref(false)
+departmentsObj.fetch()
 </script>

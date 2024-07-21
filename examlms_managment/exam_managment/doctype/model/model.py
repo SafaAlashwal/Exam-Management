@@ -14,6 +14,7 @@ def Add_Model(create_exam_doc_name):
     # Get the necessary details from the Create Exam document
     num_models = create_exam_doc.number_of_models
     random_question = create_exam_doc.random_question
+    random_answer = create_exam_doc.random_answer
 
     type_setting_doc = frappe.get_doc('Type Setting', create_exam_doc.difficulty_level)
     exam_structure = type_setting_doc.exam_structure
@@ -41,6 +42,11 @@ def Add_Model(create_exam_doc_name):
         model_doc.course = create_exam_doc.course
         model_doc.id_exam = create_exam_doc.name
         model_doc.difficulty_level = create_exam_doc.difficulty_level
+        model_doc.start_time = create_exam_doc.start_time
+        model_doc.end_time = create_exam_doc.end_time
+        model_doc.exam_duration = create_exam_doc.exam_duration
+
+        
 
         model_questions_list = []  # Reset the question list for each model
 
@@ -137,16 +143,38 @@ def Add_Model(create_exam_doc_name):
             frappe.log(question.question)
 
         for question in model_questions_list:
+            # Shuffle answer options if random_answer is checked
+            if random_answer:
+                options = [question.option_1, question.option_2, question.option_3, question.option_4]
+                random.shuffle(options)
+                question.option_1, question.option_2, question.option_3, question.option_4 = options
+                
             model_doc.append("question", {
                 "question": question.question,
                 "question_title": question.question_title,
                 "question_type": question.question_type,
-                "question_degree": question.question_degree,
+                "question_mark": question.question_mark,
                 "difficulty_degree": question.difficulty_degree,
-                "block_parent": question.block_parent
+                "block_parent": question.block_parent,
+                "option_1" : question.option_1 ,
+                "option_2" : question.option_2 ,
+                "option_3" : question.option_3 ,
+                "option_4" : question.option_4 ,
             })
 
         frappe.msgprint(f"{message} {len(model_doc.question)} questions")
         model_doc.number_of_questions = len(model_doc.question)
         model_doc.save()
         frappe.db.commit()
+
+
+
+
+@frappe.whitelist()
+def get_doctor_and_collage(id_exam):
+    doc = frappe.get_doc("Model", id_exam)
+    return {
+        "doctor": doc.doctor,
+        "collage": doc.collage,
+        "questions": [{"question": q.question, "answers": [q.answer_1, q.answer_2, q.answer_3, q.answer_4]} for q in doc.questions]
+    }

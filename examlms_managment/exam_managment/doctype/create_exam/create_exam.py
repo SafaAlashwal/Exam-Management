@@ -16,6 +16,7 @@ class CreateExam(Document):
             exam_type = self.difficulty_level
             number_of_models = self.number_of_models
             random_question = self.random_question
+            random_answer = self.random_answer
             test_type_doc = frappe.get_doc('Type Setting', exam_type)
 
             if random_question:
@@ -152,7 +153,7 @@ class CreateExam(Document):
                         if self.chapter:
                             filters['custom_chapter'] = ['in', [d.name1 for d in self.chapter]]
 
-                        question_names = frappe.get_list('LMS Question', filters=filters, fields=["name", "type", "question"])
+                        question_names = frappe.get_list('LMS Question', filters=filters, fields=["*"])
                         questions_by_structure.setdefault(question_type, []).append((structure, question_names, question_count))
                         all_question_names.extend(question_names)
 
@@ -216,26 +217,48 @@ class CreateExam(Document):
                 self.set('total_question_list', [])
                 for question in questions:
                     question_doc = frappe.get_doc('LMS Question', question["name"])
+          
+
                     if question_doc.custom_is_subquestion:
                         parent_question_block = frappe.get_doc("Question Block", question_doc.name)
                         if parent_question_block:
                             parent_question_title = parent_question_block.parent
                             question_doc2 = frappe.get_doc('LMS Question', parent_question_title)
+
                             self.append("total_question_list", {
                                 "question": question_doc.name,
                                 "question_title": question_doc.question,
                                 "question_type": question_doc.type,
-                                "question_degree": question_doc.custom_degree_question,
+                                "question_mark": question_doc.custom_question_mark,
                                 "difficulty_degree": question_doc.custom_difficulty_level,
-                                "block_parent": question_doc2.question
+                                "block_parent": question_doc2.question,
+                                "option_1" : question_doc.option_1 ,
+                                "option_2" : question_doc.option_2 ,
+                                "option_3" : question_doc.option_3 ,
+                                "option_4" : question_doc.option_4 ,
+
                             })
                     else:
+                            #             if question_doc.type == 'Choices' :
+                            #     answer_1 = question_doc.option_1
+                            #     answer_2 = question_doc.option_2
+                            #     answer_3 = question_doc.option_3
+                            #     answer_4 = question_doc.option_4
+                            # elif question_doc.type == 'User Input':
+                            #     answer_1 = question_doc.possibility_1
+                            #     answer_2 = question_doc.possibility_2
+                            #     answer_3 = question_doc.possibility_3
+                            #     answer_4 = question_doc.possibility_4
                         self.append("total_question_list", {
                             "question": question_doc.name,
                             "question_title": question_doc.question,
                             "question_type": question_doc.type,
-                            "question_degree": question_doc.custom_degree_question,
+                            "question_mark": question_doc.custom_question_mark,
                             "difficulty_degree": question_doc.custom_difficulty_level,
+                            "option_1" : question_doc.option_1 ,
+                            "option_2" : question_doc.option_2 ,
+                            "option_3" : question_doc.option_3 ,
+                            "option_4" : question_doc.option_4 ,
                         })
             else:
                 # Handle other exam types

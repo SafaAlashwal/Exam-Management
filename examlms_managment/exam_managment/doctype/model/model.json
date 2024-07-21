@@ -14,10 +14,17 @@
   "column_break_nnmk",
   "doctor",
   "course",
+  "section_break_zqwi",
+  "start_time",
+  "end_time",
+  "column_break_vlsf",
+  "exam_duration",
   "section_break_qzur",
   "difficulty_level",
   "column_break_alhn",
   "number_of_questions",
+  "column_break_fsyd",
+  "total_marks",
   "section_break_qndn",
   "question",
   "amended_from"
@@ -99,11 +106,44 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "column_break_fsyd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_marks",
+   "fieldtype": "Int",
+   "label": "Total Marks",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_zqwi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Datetime",
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Datetime",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "column_break_vlsf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "exam_duration",
+   "fieldtype": "Duration",
+   "label": "Exam Duration"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-05 17:52:08.757717",
+ "modified": "2024-07-17 23:05:38.637034",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Model",
