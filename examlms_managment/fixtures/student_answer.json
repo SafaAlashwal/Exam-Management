@@ -120,91 +120,11 @@
   "total_mark": 0.0
  },
  {
-  "appreciation": null,
+  "appreciation": "Failing",
   "course": "Frappe",
   "docstatus": 0,
   "doctype": "Student Answer",
-  "modified": "2024-07-28 00:08:18.036585",
-  "name": "Aya-Frappe-01556",
-  "result": [
-   {
-    "is_correct": 0,
-    "marks": 0.0,
-    "parent": "Aya-Frappe-01556",
-    "parentfield": "result",
-    "parenttype": "Student Answer",
-    "question": "Question Choice 7",
-    "students_response": "Option 3"
-   },
-   {
-    "is_correct": 1,
-    "marks": 1.0,
-    "parent": "Aya-Frappe-01556",
-    "parentfield": "result",
-    "parenttype": "Student Answer",
-    "question": "Question Choice 8",
-    "students_response": "Option 2"
-   },
-   {
-    "is_correct": 0,
-    "marks": 0.0,
-    "parent": "Aya-Frappe-01556",
-    "parentfield": "result",
-    "parenttype": "Student Answer",
-    "question": "Question Input 1",
-    "students_response": ""
-   }
-  ],
-  "student_id": "20_16_1477",
-  "student_name": "Aya",
-  "total_mark": 0.0
- },
- {
-  "appreciation": null,
-  "course": "Frappe",
-  "docstatus": 0,
-  "doctype": "Student Answer",
-  "modified": "2024-07-28 00:09:19.516419",
-  "name": "Aya-Frappe-01557",
-  "result": [
-   {
-    "is_correct": 0,
-    "marks": 0.0,
-    "parent": "Aya-Frappe-01557",
-    "parentfield": "result",
-    "parenttype": "Student Answer",
-    "question": "Question Input 2",
-    "students_response": ""
-   },
-   {
-    "is_correct": 1,
-    "marks": 1.0,
-    "parent": "Aya-Frappe-01557",
-    "parentfield": "result",
-    "parenttype": "Student Answer",
-    "question": "Question Choice 2",
-    "students_response": "Option 2"
-   },
-   {
-    "is_correct": 0,
-    "marks": 0.0,
-    "parent": "Aya-Frappe-01557",
-    "parentfield": "result",
-    "parenttype": "Student Answer",
-    "question": "Question Choice 1",
-    "students_response": "Option 3"
-   }
-  ],
-  "student_id": "20_16_1477",
-  "student_name": "Aya",
-  "total_mark": 0.0
- },
- {
-  "appreciation": null,
-  "course": "Frappe",
-  "docstatus": 0,
-  "doctype": "Student Answer",
-  "modified": "2024-07-28 00:10:12.157472",
+  "modified": "2024-07-28 11:56:30.456130",
   "name": "Aya-Frappe",
   "result": [
    {
@@ -237,7 +157,7 @@
   ],
   "student_id": "20_16_1477",
   "student_name": "Aya",
-  "total_mark": 0.0
+  "total_mark": 40.0
  },
  {
   "appreciation": null,
@@ -280,11 +200,11 @@
   "total_mark": 0.0
  },
  {
-  "appreciation": "",
+  "appreciation": "Failing",
   "course": "Frappe",
   "docstatus": 0,
   "doctype": "Student Answer",
-  "modified": "2024-07-28 00:26:56.739361",
+  "modified": "2024-07-28 11:56:59.796536",
   "name": "Safa-Frappe",
   "result": [
    {
@@ -317,14 +237,14 @@
   ],
   "student_id": "20_16_1471",
   "student_name": "Safa",
-  "total_mark": 1.0
+  "total_mark": 20.0
  },
  {
   "appreciation": "Successful",
   "course": "Frappe",
   "docstatus": 0,
   "doctype": "Student Answer",
-  "modified": "2024-07-28 00:51:16.314129",
+  "modified": "2024-07-28 11:57:10.710960",
   "name": "Shahba-Frappe",
   "result": [
    {
@@ -357,7 +277,7 @@
   ],
   "student_id": "20_16_1145",
   "student_name": "Shahba",
-  "total_mark": 41.0
+  "total_mark": 100.0
  },
  {
   "appreciation": "Successful",
@@ -461,5 +381,45 @@
   "student_id": "20_16_1145",
   "student_name": "Shahba",
   "total_mark": 40.0
+ },
+ {
+  "appreciation": "Failing",
+  "course": "Frappe",
+  "docstatus": 0,
+  "doctype": "Student Answer",
+  "modified": "2024-07-28 12:14:33.067230",
+  "name": "Shahba2-Vue",
+  "result": [
+   {
+    "is_correct": 1,
+    "marks": 1.0,
+    "parent": "Shahba2-Vue",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Choice 7",
+    "students_response": "Option 2"
+   },
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Shahba2-Vue",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Choice 8",
+    "students_response": "Option 3"
+   },
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Shahba2-Vue",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Input 1",
+    "students_response": ""
+   }
+  ],
+  "student_id": "20_16_1145",
+  "student_name": "Shahba2",
+  "total_mark": 30.0
  }
 ]

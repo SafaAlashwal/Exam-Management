@@ -48,7 +48,7 @@ def get_prop(student_id):
 
 @frappe.whitelist(allow_guest=True)
 def check_answer(question_id, student_answer): 
-    question = frappe.get_doc("LMS Question", question_id)
+    question = frappe.get_doc("Question", question_id)
     correct_answers = []
 
     # الحصول على نوع السؤال

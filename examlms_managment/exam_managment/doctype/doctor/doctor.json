@@ -10,7 +10,9 @@
  "field_order": [
   "name1",
   "user",
-  "courses"
+  "courses",
+  "section_break_wnou",
+  "collage"
  ],
  "fields": [
   {
@@ -33,11 +35,21 @@
    "label": "User",
    "options": "User",
    "unique": 1
+  },
+  {
+   "fieldname": "section_break_wnou",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "collage",
+   "fieldtype": "Link",
+   "label": "Collage",
+   "options": "Collage"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-27 18:22:31.724814",
+ "modified": "2024-07-28 20:59:55.578593",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Doctor",

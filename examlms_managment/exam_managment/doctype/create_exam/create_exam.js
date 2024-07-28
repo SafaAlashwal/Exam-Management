@@ -14,6 +14,23 @@ frappe.ui.form.on('Create Exam', {
             frm.set_value('doctor', '');
         }
     });
+    // frm.set_query('collage', function() {
+    //     if (frm.doc.doctor) {
+    //       return {
+    //         filters: {
+    //           doctor: frm.doc.doctor
+    //         }
+    //       };
+    //     }
+    //     else {console.log(doc.frm.doctor);}
+    //   });
+  //   frm.set_query("collage", function() {
+  //   return {
+  //     "filters": {
+  //       "doctor": frm.doc.doctor
+  //     }
+  //   };
+  // });
 },
   refresh : function (frm){
     frm.add_custom_button(__("Fetch Question"), function() {
@@ -38,8 +55,16 @@ frappe.ui.form.on('Create Exam', {
     };
   });
 
-
-
+  // frm.set_query('collage', function() {
+  //   if (frm.doc.doctor) {
+  //     return {
+  //       filters: {
+  //         doctor: frm.doc.doctor
+  //       }
+  //     };
+  //   }
+  //   else {console.log(doc.frm.doctor);}
+  // });
       ///////////// Filter Chapter ////////////////
   frm.set_query('name1', 'chapter', function() {
     return {
@@ -108,7 +133,7 @@ frappe.ui.form.on('Create Exam', {
         }
       // }
     });
-  
+    
   },
     ///////////// Filter Course ////////////////
     doctor : function(frm){
@@ -125,7 +150,20 @@ frappe.ui.form.on('Create Exam', {
         }
       // }
     });
+
   },
+
+  // course : function(frm){
+  //   // console.log(frm.doc.doctor);
+  //   frm.set_query('doctor', function() {
+  //     return {
+  //         filters: {
+  //             'collage': frm.doc.collage
+  //         }
+  //     };
+  // });
+  // }
+  // ,
   ///////////////////  Set Total Question /////////////////
   difficulty_level : function(frm) {
     frm.call({

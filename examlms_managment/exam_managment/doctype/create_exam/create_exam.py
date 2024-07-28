@@ -67,7 +67,7 @@ class CreateExam(Document):
                         if self.chapter:
                             filters['custom_chapter'] = ['in', [d.name1 for d in self.chapter]]
 
-                        question_names = frappe.get_list('LMS Question', filters=filters, fields=["name", "type", "question"])
+                        question_names = frappe.get_list('Question', filters=filters, fields=["name", "type", "question"])
                         questions_by_structure.setdefault(question_type, []).append((structure, question_names))
                         all_question_names.extend(question_names)
 
@@ -124,7 +124,7 @@ class CreateExam(Document):
                                             if self.chapter:
                                                 filters['custom_chapter'] = ['in', [d.name1 for d in self.chapter]]
 
-                                            question_names.extend(frappe.get_list('LMS Question', filters=filters, fields=["name", "type", "question"]))
+                                            question_names.extend(frappe.get_list('Question', filters=filters, fields=["name", "type", "question"]))
                                             random.shuffle(question_names)
 
                     # Ensure balanced distribution if more questions are needed
@@ -171,7 +171,7 @@ class CreateExam(Document):
                         if self.chapter:
                             filters['custom_chapter'] = ['in', [d.name1 for d in self.chapter]]
 
-                        question_names = frappe.get_list('LMS Question', filters=filters, fields=["*"])
+                        question_names = frappe.get_list('Question', filters=filters, fields=["*"])
                         questions_by_structure.setdefault(question_type, []).append((structure, question_names, question_count))
                         all_question_names.extend(question_names)
 
@@ -227,21 +227,21 @@ class CreateExam(Document):
                                             if self.chapter:
                                                 filters['custom_chapter'] = ['in', [d.name1 for d in self.chapter]]
 
-                                            question_names.extend(frappe.get_list('LMS Question', filters=filters, fields=["name", "type", "question"]))
+                                            question_names.extend(frappe.get_list('Question', filters=filters, fields=["name", "type", "question"]))
                                             random.shuffle(question_names)
 
                 # Shuffle the final list of questions
                 random.shuffle(questions)
                 self.set('total_question_list', [])
                 for question in questions:
-                    question_doc = frappe.get_doc('LMS Question', question["name"])
+                    question_doc = frappe.get_doc('Question', question["name"])
           
 
                     if question_doc.custom_is_subquestion:
                         parent_question_block = frappe.get_doc("Question Block", question_doc.name)
                         if parent_question_block:
                             parent_question_title = parent_question_block.parent
-                            question_doc2 = frappe.get_doc('LMS Question', parent_question_title)
+                            question_doc2 = frappe.get_doc('Question', parent_question_title)
 
                             self.append("total_question_list", {
                                 "question": question_doc.name,
@@ -293,7 +293,7 @@ class CreateExam(Document):
             # استخدمي مجموعة من مرشحات إضافية إذا كان ذلك ضروريًا لاسترداد الأسئلة الإضافية بشكل صحيح
 
             # الآن استرداد الأسئلة الإضافية
-            additional_question_names = frappe.get_list('LMS Question', filters=filters, fields=["name", "type", "question"])
+            additional_question_names = frappe.get_list('Question', filters=filters, fields=["name", "type", "question"])
 
             for question in additional_question_names:
                 # التحقق مما إذا كانت السؤال قد تم استخدامه بالفعل
@@ -314,7 +314,7 @@ class CreateExam(Document):
             courses = [course.course for course in doctor_doc.courses]
             # frappe.msgprint("Courses for Doctor '{0}': {1}".format(doctor, ", ".join(courses)))
             return {"courses": courses}
-
+# تصحيح الفلترة في الـdoctype 'Collage'
 
 
         @frappe.whitelist()
@@ -330,12 +330,12 @@ class CreateExam(Document):
             total_questions = 0
             for row in doc.exam_structure:
                 if row.type == "Block":
-                    block_questions = frappe.get_all("LMS Question", filters={
+                    block_questions = frappe.get_all("Question", filters={
                         "type": "Block",
                         "custom_difficulty_level": row.question_level
                     })
                     for block_question in block_questions:
-                        block_question_doc = frappe.get_doc("LMS Question", block_question.name)
+                        block_question_doc = frappe.get_doc("Question", block_question.name)
                         total_questions += len(block_question_doc.custom_question_block)
                 else:
                     total_questions += row.number_of_question
@@ -348,19 +348,12 @@ class CreateExam(Document):
 
 
 
-
-  # if question_doc.type == "Block":
-                            #     # Get the child questions for Block type question
-                            #     block_question = frappe.get_doc('LMS Question', question_doc.name)
-                            #     sub_questions = block_question.custom_question_block[:]  # Create a copy of the list
-                            #     random.shuffle(sub_questions)  # Shuffle the sub-questions
-                            #     for sub_question in sub_questions:
-                            #         sub_question_doc = frappe.get_doc('LMS Question', sub_question.question)
-                            #         self.append("total_question_list", {
-                            #             "question": sub_question_doc.name,
-                            #             "question_title": sub_question_doc.question,
-                            #             "question_type": sub_question_doc.type,
-                            #             "question_degree": sub_question_doc.custom_degree_question,
-                            #             "difficulty_degree": sub_question_doc.custom_difficulty_level,
-                            #             "block_parent": question_doc.name
-                            #         })
+                # تعيين استعلام مخصص للفلترة في `Collage`
+# @frappe.whitelist()
+# def get_collages_by_doctor(doctype, txt, searchfield, start, page_len, filters):
+#     doctor = filters.get('doctor')
+#     if doctor:
+#         return frappe.db.sql("""SELECT name FROM `tabCollage` 
+#             WHERE name IN (SELECT collage FROM `tabDoctor` WHERE doctor=%s)""", doctor)
+#     else:
+#         return frappe.db.sql("""SELECT name FROM `tabCollage`""")

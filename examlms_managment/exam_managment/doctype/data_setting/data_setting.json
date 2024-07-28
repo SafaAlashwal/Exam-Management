@@ -16,7 +16,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Type",
-   "options": "Choices\nUser Input\nBlock\nDropdown"
+   "options": "Choices\nUser Input\nBlock"
   },
   {
    "fieldname": "question_level",
@@ -35,7 +35,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-05-31 15:31:24.851995",
+ "modified": "2024-07-28 18:37:48.778138",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Data Setting",

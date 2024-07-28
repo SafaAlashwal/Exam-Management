@@ -1,11 +1,15 @@
 {
  "charts": [
   {
-   "chart_name": "Course Results",
-   "label": "Courses Results"
+   "chart_name": "Course Result",
+   "label": "Course Result"
+  },
+  {
+   "chart_name": "Appreciation",
+   "label": "Course Appreciation"
   }
  ],
- "content": "[{\"id\":\"ZmrzBI3bQg\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"hFKjvgaxoZ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Collages\",\"col\":3}},{\"id\":\"Y6qr2b_YpU\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Courses\",\"col\":3}},{\"id\":\"3FGVJahbLL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Doctors\",\"col\":3}},{\"id\":\"__MEWqdKSG\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Students\",\"col\":3}},{\"id\":\"gfUCf3Pm5I\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Your Shortucts</span>\",\"col\":12}},{\"id\":\"36MzjYMLOU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lms Question\",\"col\":3}},{\"id\":\"z4Wwvftmxq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create Exam\",\"col\":3}},{\"id\":\"hA_-g8Dlv0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Model\",\"col\":3}},{\"id\":\"Zy8-CHVAe8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Type Settings\",\"col\":3}},{\"id\":\"GdfnDDWfcO\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"wgoVrUJW2Y\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"--Ejj7MxVJ\",\"type\":\"card\",\"data\":{\"card_name\":\"Report\",\"col\":12}},{\"id\":\"1VD0ejuSd3\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Courses Results\",\"col\":12}},{\"id\":\"49KRN5MncO\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Y1hsniyyys\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b><b></b></span>\",\"col\":12}},{\"id\":\"jk80EPQf2H\",\"type\":\"card\",\"data\":{\"card_name\":\"Academic programs\",\"col\":4}},{\"id\":\"Ik6R4lnlHN\",\"type\":\"card\",\"data\":{\"card_name\":\"Master\",\"col\":4}},{\"id\":\"p8gcQDVTBF\",\"type\":\"card\",\"data\":{\"card_name\":\"Content Exam\",\"col\":4}},{\"id\":\"m0uCD3rWm0\",\"type\":\"spacer\",\"data\":{\"col\":12}}]",
+ "content": "[{\"id\":\"ZmrzBI3bQg\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"hFKjvgaxoZ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Collages\",\"col\":3}},{\"id\":\"Y6qr2b_YpU\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Courses\",\"col\":3}},{\"id\":\"3FGVJahbLL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Doctors\",\"col\":3}},{\"id\":\"__MEWqdKSG\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Students\",\"col\":3}},{\"id\":\"8vZlVQ2ofm\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"gfUCf3Pm5I\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Your Shortucts</span>\",\"col\":12}},{\"id\":\"36MzjYMLOU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Question\",\"col\":4}},{\"id\":\"Zy8-CHVAe8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Type Settings\",\"col\":4}},{\"id\":\"z4Wwvftmxq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create Exam\",\"col\":4}},{\"id\":\"hA_-g8Dlv0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Model\",\"col\":4}},{\"id\":\"d_kSBlLQ8t\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Students Answers\",\"col\":4}},{\"id\":\"wgoVrUJW2Y\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"49KRN5MncO\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Y1hsniyyys\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b><b></b></span>\",\"col\":12}},{\"id\":\"jk80EPQf2H\",\"type\":\"card\",\"data\":{\"card_name\":\"Academic programs\",\"col\":3}},{\"id\":\"Ik6R4lnlHN\",\"type\":\"card\",\"data\":{\"card_name\":\"Master\",\"col\":3}},{\"id\":\"p8gcQDVTBF\",\"type\":\"card\",\"data\":{\"card_name\":\"Content Exam\",\"col\":3}},{\"id\":\"--Ejj7MxVJ\",\"type\":\"card\",\"data\":{\"card_name\":\"Report\",\"col\":3}},{\"id\":\"m0uCD3rWm0\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"TWWEvjuVBu\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Course Result\",\"col\":6}},{\"id\":\"mu6GICf7LN\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Course Appreciation\",\"col\":6}}]",
  "creation": "2024-05-12 03:34:30.914726",
  "custom_blocks": [],
  "docstatus": 0,
@@ -149,7 +153,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Report",
-   "link_count": 1,
+   "link_count": 3,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -157,16 +161,36 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Student Answer",
+   "label": "Students Results",
    "link_count": 0,
-   "link_to": "Student Answer",
-   "link_type": "DocType",
+   "link_to": "Students Result",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Success Rate",
+   "link_count": 0,
+   "link_to": "Course Appreciation",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Student Ratios",
+   "link_count": 0,
+   "link_to": "Course Result",
+   "link_type": "Report",
    "onboard": 0,
    "type": "Link"
   }
  ],
- "modified": "2024-07-27 22:44:50.867426",
- "modified_by": "Administrator",
+ "modified": "2024-07-28 19:58:12.833461",
+ "modified_by": "safa2@gmail.com",
  "module": "Exam Managment",
  "name": "Exam Management",
  "number_cards": [
@@ -197,16 +221,24 @@
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "Create Exam",
-   "link_to": "Create Exam",
+   "label": "Question",
+   "link_to": "Question",
    "stats_filter": "[]",
    "type": "DocType"
   },
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "Lms Question",
-   "link_to": "LMS Question",
+   "label": "Students Answers",
+   "link_to": "Student Answer",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Create Exam",
+   "link_to": "Create Exam",
    "stats_filter": "[]",
    "type": "DocType"
   },

@@ -23,7 +23,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Question",
-   "options": "LMS Question"
+   "options": "Question"
   },
   {
    "fieldname": "section_break_fjpt",
@@ -83,7 +83,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-12 23:10:35.841465",
+ "modified": "2024-07-28 18:37:33.839115",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Question Quiz",

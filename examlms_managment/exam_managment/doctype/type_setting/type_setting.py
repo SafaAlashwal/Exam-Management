@@ -11,7 +11,7 @@ class TypeSetting(Document):
 
 			questions = []
 			for structure in self.exam_structure:
-				questions += frappe.get_list('LMS Question', filters={
+				questions += frappe.get_list('Question', filters={
 					'type': structure.type,
 					'custom_difficulty_level': structure.question_level
 				}, fields=["question"], limit_page_length=structure.number_of_question)
@@ -34,7 +34,7 @@ class TypeSetting(Document):
 				# Calculate the number of questions for this structure based on the ratio
 				num_questions = total_questions * structure.percentage / 100
 		
-				questions += frappe.get_list('LMS Question', filters={
+				questions += frappe.get_list('Question', filters={
 					'type': structure.type,
 					'custom_difficulty_level': structure.question_level
 				}, fields=["question"], limit_page_length=num_questions)

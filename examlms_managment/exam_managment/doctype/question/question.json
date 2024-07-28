@@ -1,27 +1,258 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:QTS-{YYYY}-{#####}",
  "creation": "2024-05-03 22:06:52.074429",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "question"
+  "question",
+  "type",
+  "multiple_correct_answer",
+  "custom_is_subquestion",
+  "section_break_jomv",
+  "custom_course",
+  "custom_chapter",
+  "column_break_iagu",
+  "custom_difficulty_level",
+  "custom_question_mark",
+  "section_break_slef",
+  "option_1",
+  "is_correct_1",
+  "column_break_egxw",
+  "explanation_1",
+  "section_break_szbr",
+  "option_2",
+  "is_correct_2",
+  "column_break_yajp",
+  "explanation_2",
+  "section_break_qjbx",
+  "option_3",
+  "is_correct_3",
+  "column_break_dheg",
+  "explanation_3",
+  "section_break_njfp",
+  "option_4",
+  "is_correct_4",
+  "column_break_osxs",
+  "explanation_4",
+  "section_break_glzr",
+  "possibility_1",
+  "possibility_3",
+  "column_break_oudj",
+  "possibility_2",
+  "possibility_4",
+  "section_break_cxpy",
+  "custom_question_block"
  ],
  "fields": [
   {
    "fieldname": "question",
-   "fieldtype": "Data",
-   "label": "question"
+   "fieldtype": "Text Editor",
+   "in_list_view": 1,
+   "label": "Question"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Choices\nUser Input\nBlock"
+  },
+  {
+   "default": "0",
+   "fieldname": "multiple_correct_answer",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Multiple Correct Answer"
+  },
+  {
+   "depends_on": "eval:doc.type == \"Choices\";",
+   "fieldname": "section_break_slef",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "option_1",
+   "fieldtype": "Small Text",
+   "label": "Option 1"
+  },
+  {
+   "fieldname": "column_break_egxw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_correct_1",
+   "fieldtype": "Check",
+   "label": "Is Correct"
+  },
+  {
+   "fieldname": "explanation_1",
+   "fieldtype": "Small Text",
+   "label": "Explanation"
+  },
+  {
+   "depends_on": "eval:doc.type == \"Choices\";",
+   "fieldname": "section_break_szbr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "option_2",
+   "fieldtype": "Small Text",
+   "label": "Option 2"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_correct_2",
+   "fieldtype": "Check",
+   "label": "Is Correct"
+  },
+  {
+   "fieldname": "column_break_yajp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "explanation_2",
+   "fieldtype": "Small Text",
+   "label": "Explanation"
+  },
+  {
+   "depends_on": "eval:doc.type == \"Choices\";",
+   "fieldname": "section_break_qjbx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "option_3",
+   "fieldtype": "Small Text",
+   "label": "Option 3"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_correct_3",
+   "fieldtype": "Check",
+   "label": "Is Correct"
+  },
+  {
+   "fieldname": "column_break_dheg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "explanation_3",
+   "fieldtype": "Small Text",
+   "label": "Explanation"
+  },
+  {
+   "depends_on": "eval:doc.type == \"Choices\";",
+   "fieldname": "section_break_njfp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "option_4",
+   "fieldtype": "Small Text",
+   "label": "Option 4"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_correct_4",
+   "fieldtype": "Check",
+   "label": "Is Correct"
+  },
+  {
+   "fieldname": "column_break_osxs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "explanation_4",
+   "fieldtype": "Small Text",
+   "label": "Explanation"
+  },
+  {
+   "fieldname": "section_break_jomv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_iagu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.type == \"User Input\";",
+   "fieldname": "section_break_glzr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_oudj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.type == \"Block\";",
+   "fieldname": "section_break_cxpy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "custom_question_block",
+   "fieldtype": "Table",
+   "label": "Question Block",
+   "options": "Question Block"
+  },
+  {
+   "fieldname": "custom_course",
+   "fieldtype": "Link",
+   "label": "Course",
+   "options": "Course"
+  },
+  {
+   "fieldname": "custom_chapter",
+   "fieldtype": "Link",
+   "label": "Chapter",
+   "options": "Chapter"
+  },
+  {
+   "fieldname": "custom_question_mark",
+   "fieldtype": "Float",
+   "label": "Question Mark"
+  },
+  {
+   "fieldname": "custom_difficulty_level",
+   "fieldtype": "Link",
+   "label": "Difficulty Level",
+   "options": "Difficulty Levels"
+  },
+  {
+   "fieldname": "possibility_1",
+   "fieldtype": "Small Text",
+   "label": "Possible Answer 1"
+  },
+  {
+   "fieldname": "possibility_3",
+   "fieldtype": "Small Text",
+   "label": "Possible Answer 3"
+  },
+  {
+   "fieldname": "possibility_2",
+   "fieldtype": "Small Text",
+   "label": "Possible Answer 2"
+  },
+  {
+   "fieldname": "possibility_4",
+   "fieldtype": "Small Text",
+   "label": "Possible Answer 4"
+  },
+  {
+   "default": "0",
+   "fieldname": "custom_is_subquestion",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Is Subquestion"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-03 22:06:52.074429",
+ "modified": "2024-07-28 18:44:30.294449",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Question",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -39,5 +270,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "question"
 }

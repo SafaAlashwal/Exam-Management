@@ -24,8 +24,9 @@
   },
   {
    "fieldname": "course",
-   "fieldtype": "Data",
-   "label": "Course"
+   "fieldtype": "Link",
+   "label": "Course",
+   "options": "Course"
   },
   {
    "fieldname": "section_break_lzcu",
@@ -63,7 +64,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-28 00:09:46.329855",
+ "modified": "2024-07-28 20:15:08.053826",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Student Answer",

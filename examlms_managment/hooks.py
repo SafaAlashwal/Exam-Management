@@ -108,9 +108,9 @@ app_include_css = "/assets/examlms_managment/css/custom_report.css"
 # ---------------
 # Override standard doctype classes
 
-override_doctype_class = {
-	"LMS Question": "examlms_managment.override.question.LMSQuestion"
-}
+# override_doctype_class = {
+# 	"LMS Question": "examlms_managment.override.question.LMSQuestion"
+# }
 
 # Document Events
 # ---------------
@@ -215,7 +215,7 @@ doc_events = {
 
 fixtures =[
     "Custom Field",
-    "LMS Question",
+    "Question",
     "Doctor",
     "Course",
     "Collage",
