@@ -1,3 +1,4 @@
+
 import frappe
 from frappe import _
 
@@ -27,21 +28,9 @@ def execute(filters=None):
         {
             "fieldname": "course_details",
             "label": _("Course Details"),
-            "fieldtype": "HTML",
-            "width": 400
+            "fieldtype": "Data",
+            "width": 500
         },
-        # {
-        #     "fieldname": "total_marks",
-        #     "label": _("Total Marks"),
-        #     "fieldtype": "Float",
-        #     "width": 150
-        # },
-        # {
-        #     "fieldname": "appreciation",
-        #     "label": _("Appreciation"),
-        #     "fieldtype": "Data",
-        #     "width": 150
-        # },
     ]
     
     # Fetch the data
@@ -66,36 +55,13 @@ def execute(filters=None):
         student_data[answer.student_id]['courses'][answer.course]['total_mark'] += answer.total_mark
     
     for student_id, details in student_data.items():
-        course_details_html = """
-        <table style="width: 100%; border-collapse: collapse;">
-            <thead>
-                <tr>
-                    <th style="text-align: left;">Course</th>
-                    <th style="text-align: right;">Total Marks</th>
-                    <th style="text-align: right;">Appreciation</th>
-                </tr>
-            </thead>
-            <tbody>
-        """
-        for course, info in details['courses'].items():
-            course_details_html += f"""
-            <tr>
-                <td style="text-align: left; white-space: normal;">{course}</td>
-                <td style="text-align: right; white-space: normal;">{info['total_mark']}</td>
-                <td style="text-align: right; white-space: normal;">{info['appreciation']}</td>
-            </tr>
-            """
-        course_details_html += """
-            </tbody>
-        </table>
-        """
-        
-        # total_marks = sum([info['total_mark'] for info in details['courses'].values()])
+        course_details = ", ".join([f"{course}: {info['total_mark']} ({info['appreciation']})" for course, info in details['courses'].items()])
+        total_marks = sum([info['total_mark'] for info in details['courses'].values()])
         data.append({
             'student_id': student_id,
             'student_name': details['student_name'],
             'course_count': len(details['courses']),
-            'course_details': course_details_html,
+            'course_details': course_details,
             # 'total_marks': total_marks,
             # 'appreciation': details['appreciation']
         })
