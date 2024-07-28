@@ -1,0 +1,151 @@
+[
+ {
+  "courses": [
+   {
+    "course": "Frappe",
+    "parent": "safa2@gmail.com",
+    "parentfield": "courses",
+    "parenttype": "Doctor"
+   },
+   {
+    "course": "Vue",
+    "parent": "safa2@gmail.com",
+    "parentfield": "courses",
+    "parenttype": "Doctor"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Doctor",
+  "modified": "2024-07-28 00:55:10.667212",
+  "name": "safa2@gmail.com",
+  "name1": "Safa",
+  "user": "safa2@gmail.com"
+ },
+ {
+  "courses": [
+   {
+    "course": "Vue",
+    "parent": "ahmed@gmail.com",
+    "parentfield": "courses",
+    "parenttype": "Doctor"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Doctor",
+  "modified": "2024-07-27 18:28:37.963310",
+  "name": "ahmed@gmail.com",
+  "name1": "Ahmed",
+  "user": "ahmed@gmail.com"
+ },
+ {
+  "courses": [
+   {
+    "course": "ASP.Net",
+    "parent": "hassan@gmail.com",
+    "parentfield": "courses",
+    "parenttype": "Doctor"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Doctor",
+  "modified": "2024-07-27 18:29:51.724847",
+  "name": "hassan@gmail.com",
+  "name1": "Hassan",
+  "user": "hassan@gmail.com"
+ },
+ {
+  "courses": [
+   {
+    "course": "Frappe",
+    "parent": "ala@gmail.com",
+    "parentfield": "courses",
+    "parenttype": "Doctor"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Doctor",
+  "modified": "2024-07-27 18:33:01.859030",
+  "name": "ala@gmail.com",
+  "name1": "Ala Alsalam",
+  "user": "ala@gmail.com"
+ },
+ {
+  "courses": [
+   {
+    "course": "Analysis",
+    "parent": "mansour@gmail.com",
+    "parentfield": "courses",
+    "parenttype": "Doctor"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Doctor",
+  "modified": "2024-07-27 18:35:02.757193",
+  "name": "mansour@gmail.com",
+  "name1": "Mansour",
+  "user": "mansour@gmail.com"
+ },
+ {
+  "courses": [],
+  "docstatus": 0,
+  "doctype": "Doctor",
+  "modified": "2024-07-27 20:12:13.733246",
+  "name": "mokhtar@gmail.com",
+  "name1": "Mokhtar",
+  "user": "mokhtar@gmail.com"
+ },
+ {
+  "courses": [],
+  "docstatus": 0,
+  "doctype": "Doctor",
+  "modified": "2024-07-27 20:12:41.820113",
+  "name": "aya@gmail.com",
+  "name1": "Aya",
+  "user": "aya@gmail.com"
+ },
+ {
+  "courses": [],
+  "docstatus": 0,
+  "doctype": "Doctor",
+  "modified": "2024-07-27 20:13:00.767171",
+  "name": "shahba@gmail.com",
+  "name1": "Shahba",
+  "user": "shahba@gmail.com"
+ },
+ {
+  "courses": [],
+  "docstatus": 0,
+  "doctype": "Doctor",
+  "modified": "2024-07-27 20:13:11.109699",
+  "name": "abeer@gmail.com",
+  "name1": "Abeer",
+  "user": "abeer@gmail.com"
+ },
+ {
+  "courses": [],
+  "docstatus": 0,
+  "doctype": "Doctor",
+  "modified": "2024-07-27 20:43:54.117190",
+  "name": "marwa@gmail.com",
+  "name1": "Marwa",
+  "user": "marwa@gmail.com"
+ },
+ {
+  "courses": [],
+  "docstatus": 0,
+  "doctype": "Doctor",
+  "modified": "2024-07-27 20:44:10.081176",
+  "name": "shukry@gmail.com",
+  "name1": "Shukry",
+  "user": "shukry@gmail.com"
+ },
+ {
+  "courses": [],
+  "docstatus": 0,
+  "doctype": "Doctor",
+  "modified": "2024-07-27 20:46:13.367376",
+  "name": "rasha@gmail.com",
+  "name1": "Rasha",
+  "user": "rasha@gmail.com"
+ }
+]

@@ -9,7 +9,7 @@ app_license = "MIT"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/examlms_managment/css/examlms_managment.css"
+app_include_css = "/assets/examlms_managment/css/custom_report.css"
 # app_include_js = "/assets/examlms_managment/js/examlms_managment.js"
 
 # include js, css files in header of web template
@@ -214,7 +214,19 @@ doc_events = {
 
 
 fixtures =[
-    "Custom Field"
+    "Custom Field",
+    "LMS Question",
+    "Doctor",
+    "Course",
+    "Collage",
+    "Department",
+    "Level",
+    "Chapter",
+    "Type Setting",
+    "Student Record",
+	"Student Answer",
+    "Create Exam",
+    "Model",
 ]
 
 website_route_rules = [{'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'},]

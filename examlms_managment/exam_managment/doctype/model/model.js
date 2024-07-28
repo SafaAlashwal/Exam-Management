@@ -2,17 +2,17 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Model", {
-  refresh(frm) {
-    frm.add_custom_button(__("See in Webset"), function () {
-      let name = frm.doc.name;
-      console.log(name)
-      if (name) {
-        window.location.href = `/vue/index?name=${name}`;
-      } else {
-        frappe.msgprint(__("Please make sure the ID Exam is available."));
-      }
-    });
-  },
+  // refresh(frm) {
+  //   frm.add_custom_button(__("See in Webset"), function () {
+  //     let name = frm.doc.name;
+  //     console.log(name)
+  //     if (name) {
+  //       window.location.href = `/vue/index?name=${name}`;
+  //     } else {
+  //       frappe.msgprint(__("Please make sure the ID Exam is available."));
+  //     }
+  //   });
+  // },
   setup(frm) {
     calculateTotalMarks(frm);
   },

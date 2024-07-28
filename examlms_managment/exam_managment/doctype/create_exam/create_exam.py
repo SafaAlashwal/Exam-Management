@@ -3,12 +3,30 @@ from frappe.model.document import Document
 import random
 
 class CreateExam(Document):
-
         def validate(self):
-            if not self.course:
-                frappe.throw("Error: Please Enter the Course Name.")
-            # if self.number_of_questions > self.total_question:
-            #     frappe.throw("Error: Number of Questions is larger than Total Questions")
+                if not self.course:
+                    frappe.throw("Error: Please Enter the Course Name.")
+                if not self.doctor:
+                    self.doctor = frappe.session.user
+
+                
+                # Call the validate_question_marks method here
+                # self.validate_question_marks()
+        
+        @frappe.whitelist()
+        def validate_question_marks(self):
+            question_marks = {}
+            question_indices = {}
+            for idx, question in enumerate(self.total_question_list, start=1):
+                key = (question.question_type, question.difficulty_degree)
+                if key in question_marks:
+                    if question_marks[key] != question.question_mark:
+                        first_question_index = question_indices[key]
+                        frappe.throw(f"Error: All questions of type {question.question_type} and difficulty level {question.difficulty_degree} must have the same marks. First question with this type and difficulty: {first_question_index}, Question number with different mark: {idx}")
+                else:
+                    question_marks[key] = question.question_mark
+                    question_indices[key] = idx
+
 
         @frappe.whitelist()
         def fetch_question(self):

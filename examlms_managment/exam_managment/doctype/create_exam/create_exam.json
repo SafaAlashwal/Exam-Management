@@ -33,8 +33,7 @@
   "section_break_ktvm",
   "total_question",
   "total_question_list",
-  "amended_from",
-  "password"
+  "amended_from"
  ],
  "fields": [
   {
@@ -136,8 +135,7 @@
    "fieldname": "doctor",
    "fieldtype": "Link",
    "label": "Doctor",
-   "options": "Doctor",
-   "reqd": 1
+   "options": "Doctor"
   },
   {
    "fieldname": "difficulty_level",
@@ -163,11 +161,6 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
-  },
-  {
-   "fieldname": "password",
-   "fieldtype": "Password",
-   "label": "Password"
   },
   {
    "fieldname": "section_break_fkll",
@@ -206,7 +199,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-18 01:25:20.210892",
+ "modified": "2024-07-27 21:10:18.779215",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Create Exam",

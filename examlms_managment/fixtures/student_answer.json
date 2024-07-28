@@ -1,0 +1,465 @@
+[
+ {
+  "appreciation": null,
+  "course": "Web",
+  "docstatus": 0,
+  "doctype": "Student Answer",
+  "modified": "2024-07-28 00:01:45.184371",
+  "name": "safa-Web-01553",
+  "result": [
+   {
+    "is_correct": 1,
+    "marks": 2.0,
+    "parent": "safa-Web-01553",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "ما هو عاصمة فرنسا؟",
+    "students_response": ""
+   },
+   {
+    "is_correct": 1,
+    "marks": 2.0,
+    "parent": "safa-Web-01553",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "ما هو 2 + 2؟",
+    "students_response": "55"
+   },
+   {
+    "is_correct": 0,
+    "marks": 2.0,
+    "parent": "safa-Web-01553",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "ما هو لون السماء؟",
+    "students_response": "أزرق"
+   }
+  ],
+  "student_id": "33333",
+  "student_name": "safa",
+  "total_mark": 0.0
+ },
+ {
+  "appreciation": null,
+  "course": "Vue",
+  "docstatus": 0,
+  "doctype": "Student Answer",
+  "modified": "2024-07-28 00:01:52.409457",
+  "name": "safa-Vue-01554",
+  "result": [
+   {
+    "is_correct": 1,
+    "marks": 2.0,
+    "parent": "safa-Vue-01554",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "ما هو عاصمة فرنسا؟",
+    "students_response": ""
+   },
+   {
+    "is_correct": 1,
+    "marks": 2.0,
+    "parent": "safa-Vue-01554",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "ما هو 2 + 2؟",
+    "students_response": "55"
+   },
+   {
+    "is_correct": 0,
+    "marks": 2.0,
+    "parent": "safa-Vue-01554",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "ما هو لون السماء؟",
+    "students_response": "أزرق"
+   }
+  ],
+  "student_id": "33333",
+  "student_name": "safa",
+  "total_mark": 0.0
+ },
+ {
+  "appreciation": null,
+  "course": "Vue",
+  "docstatus": 0,
+  "doctype": "Student Answer",
+  "modified": "2024-07-28 00:02:00.875096",
+  "name": "shahba-Vue-01555",
+  "result": [
+   {
+    "is_correct": 1,
+    "marks": 2.0,
+    "parent": "shahba-Vue-01555",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "ما هو عاصمة فرنسا؟",
+    "students_response": ""
+   },
+   {
+    "is_correct": 1,
+    "marks": 2.0,
+    "parent": "shahba-Vue-01555",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "ما هو 2 + 2؟",
+    "students_response": "55"
+   },
+   {
+    "is_correct": 0,
+    "marks": 2.0,
+    "parent": "shahba-Vue-01555",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "ما هو لون السماء؟",
+    "students_response": "أزرق"
+   }
+  ],
+  "student_id": "33333",
+  "student_name": "shahba",
+  "total_mark": 0.0
+ },
+ {
+  "appreciation": null,
+  "course": "Frappe",
+  "docstatus": 0,
+  "doctype": "Student Answer",
+  "modified": "2024-07-28 00:08:18.036585",
+  "name": "Aya-Frappe-01556",
+  "result": [
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Aya-Frappe-01556",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Choice 7",
+    "students_response": "Option 3"
+   },
+   {
+    "is_correct": 1,
+    "marks": 1.0,
+    "parent": "Aya-Frappe-01556",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Choice 8",
+    "students_response": "Option 2"
+   },
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Aya-Frappe-01556",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Input 1",
+    "students_response": ""
+   }
+  ],
+  "student_id": "20_16_1477",
+  "student_name": "Aya",
+  "total_mark": 0.0
+ },
+ {
+  "appreciation": null,
+  "course": "Frappe",
+  "docstatus": 0,
+  "doctype": "Student Answer",
+  "modified": "2024-07-28 00:09:19.516419",
+  "name": "Aya-Frappe-01557",
+  "result": [
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Aya-Frappe-01557",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Input 2",
+    "students_response": ""
+   },
+   {
+    "is_correct": 1,
+    "marks": 1.0,
+    "parent": "Aya-Frappe-01557",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Choice 2",
+    "students_response": "Option 2"
+   },
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Aya-Frappe-01557",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Choice 1",
+    "students_response": "Option 3"
+   }
+  ],
+  "student_id": "20_16_1477",
+  "student_name": "Aya",
+  "total_mark": 0.0
+ },
+ {
+  "appreciation": null,
+  "course": "Frappe",
+  "docstatus": 0,
+  "doctype": "Student Answer",
+  "modified": "2024-07-28 00:10:12.157472",
+  "name": "Aya-Frappe",
+  "result": [
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Aya-Frappe",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Input 2",
+    "students_response": ""
+   },
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Aya-Frappe",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Choice 2",
+    "students_response": ""
+   },
+   {
+    "is_correct": 1,
+    "marks": 1.0,
+    "parent": "Aya-Frappe",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Choice 1",
+    "students_response": "Option 2"
+   }
+  ],
+  "student_id": "20_16_1477",
+  "student_name": "Aya",
+  "total_mark": 0.0
+ },
+ {
+  "appreciation": null,
+  "course": "Web",
+  "docstatus": 0,
+  "doctype": "Student Answer",
+  "modified": "2024-07-28 00:11:30.401706",
+  "name": "Aya-Web",
+  "result": [
+   {
+    "is_correct": 1,
+    "marks": 2.0,
+    "parent": "Aya-Web",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "ما هو عاصمة فرنسا؟",
+    "students_response": ""
+   },
+   {
+    "is_correct": 1,
+    "marks": 2.0,
+    "parent": "Aya-Web",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "ما هو 2 + 2؟",
+    "students_response": "55"
+   },
+   {
+    "is_correct": 0,
+    "marks": 2.0,
+    "parent": "Aya-Web",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "ما هو لون السماء؟",
+    "students_response": "أزرق"
+   }
+  ],
+  "student_id": "33333",
+  "student_name": "Aya",
+  "total_mark": 0.0
+ },
+ {
+  "appreciation": "",
+  "course": "Frappe",
+  "docstatus": 0,
+  "doctype": "Student Answer",
+  "modified": "2024-07-28 00:26:56.739361",
+  "name": "Safa-Frappe",
+  "result": [
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Safa-Frappe",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Input 2",
+    "students_response": ""
+   },
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Safa-Frappe",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Choice 2",
+    "students_response": ""
+   },
+   {
+    "is_correct": 1,
+    "marks": 1.0,
+    "parent": "Safa-Frappe",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Choice 1",
+    "students_response": "Option 2"
+   }
+  ],
+  "student_id": "20_16_1471",
+  "student_name": "Safa",
+  "total_mark": 1.0
+ },
+ {
+  "appreciation": "Successful",
+  "course": "Frappe",
+  "docstatus": 0,
+  "doctype": "Student Answer",
+  "modified": "2024-07-28 00:51:16.314129",
+  "name": "Shahba-Frappe",
+  "result": [
+   {
+    "is_correct": 1,
+    "marks": 1.0,
+    "parent": "Shahba-Frappe",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Choice 7",
+    "students_response": "Option 2"
+   },
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Shahba-Frappe",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Choice 8",
+    "students_response": "Option 3"
+   },
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Shahba-Frappe",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Input 1",
+    "students_response": ""
+   }
+  ],
+  "student_id": "20_16_1145",
+  "student_name": "Shahba",
+  "total_mark": 41.0
+ },
+ {
+  "appreciation": "Successful",
+  "course": "Vue",
+  "docstatus": 0,
+  "doctype": "Student Answer",
+  "modified": "2024-07-28 01:18:38.555015",
+  "name": "Shahba-Vue",
+  "result": [
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Shahba-Vue",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "<div class=\"ql-editor read-mode\"><p>Question Choice Vue 2</p></div>",
+    "students_response": ""
+   },
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Shahba-Vue",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "<div class=\"ql-editor read-mode\"><p>Question Choice Vue 8</p></div>",
+    "students_response": ""
+   },
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Shahba-Vue",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "<div class=\"ql-editor read-mode\"><p>Question Choice Vue 6</p></div>",
+    "students_response": ""
+   },
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Shahba-Vue",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "<div class=\"ql-editor read-mode\"><p>Question Choice Vue 5</p></div>",
+    "students_response": ""
+   },
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Shahba-Vue",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Input 4",
+    "students_response": ""
+   },
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Shahba-Vue",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "<div class=\"ql-editor read-mode\"><p>Question Choice Vue 1</p></div>",
+    "students_response": ""
+   },
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Shahba-Vue",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "<div class=\"ql-editor read-mode\"><p>Question Input Vue 1</p></div>",
+    "students_response": ""
+   },
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Shahba-Vue",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "Question Choice 4",
+    "students_response": ""
+   },
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Shahba-Vue",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "<div class=\"ql-editor read-mode\"><p>Question Choice Vue 3</p></div>",
+    "students_response": ""
+   },
+   {
+    "is_correct": 0,
+    "marks": 0.0,
+    "parent": "Shahba-Vue",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "<div class=\"ql-editor read-mode\"><p>Question Choice Vue 4</p></div>",
+    "students_response": ""
+   }
+  ],
+  "student_id": "20_16_1145",
+  "student_name": "Shahba",
+  "total_mark": 40.0
+ }
+]

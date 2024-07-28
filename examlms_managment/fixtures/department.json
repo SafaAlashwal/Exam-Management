@@ -1,0 +1,462 @@
+[
+ {
+  "collage": "Engineering",
+  "department": "Arch",
+  "docstatus": 0,
+  "doctype": "Department",
+  "levels": [
+   {
+    "level": "Level 1",
+    "parent": "Arch",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   }
+  ],
+  "modified": "2024-07-18 17:58:14.276631",
+  "name": "Arch"
+ },
+ {
+  "collage": "Medicine",
+  "department": "Human Medicine",
+  "docstatus": 0,
+  "doctype": "Department",
+  "levels": [
+   {
+    "level": "Level 1",
+    "parent": "Human Medicine",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 2",
+    "parent": "Human Medicine",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 3",
+    "parent": "Human Medicine",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 4",
+    "parent": "Human Medicine",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 5",
+    "parent": "Human Medicine",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 6",
+    "parent": "Human Medicine",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 7",
+    "parent": "Human Medicine",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   }
+  ],
+  "modified": "2024-07-27 22:57:41.311222",
+  "name": "Human Medicine"
+ },
+ {
+  "collage": "Medicine",
+  "department": "Dental",
+  "docstatus": 0,
+  "doctype": "Department",
+  "levels": [
+   {
+    "level": "Level 1",
+    "parent": "Dental",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 2",
+    "parent": "Dental",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 3",
+    "parent": "Dental",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 4",
+    "parent": "Dental",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 5",
+    "parent": "Dental",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   }
+  ],
+  "modified": "2024-07-27 22:58:35.689276",
+  "name": "Dental"
+ },
+ {
+  "collage": "Medicine",
+  "department": "Laboratory",
+  "docstatus": 0,
+  "doctype": "Department",
+  "levels": [
+   {
+    "level": "Level 1",
+    "parent": "Laboratory",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 2",
+    "parent": "Laboratory",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 3",
+    "parent": "Laboratory",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 4",
+    "parent": "Laboratory",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 5",
+    "parent": "Laboratory",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   }
+  ],
+  "modified": "2024-07-27 22:59:14.635735",
+  "name": "Laboratory"
+ },
+ {
+  "collage": "Engineering",
+  "department": "Civil",
+  "docstatus": 0,
+  "doctype": "Department",
+  "levels": [
+   {
+    "level": "Level 1",
+    "parent": "Civil",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 2",
+    "parent": "Civil",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 3",
+    "parent": "Civil",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 4",
+    "parent": "Civil",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 5",
+    "parent": "Civil",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   }
+  ],
+  "modified": "2024-07-27 22:59:56.804634",
+  "name": "Civil"
+ },
+ {
+  "collage": "Engineering",
+  "department": "Electrical",
+  "docstatus": 0,
+  "doctype": "Department",
+  "levels": [
+   {
+    "level": "Level 1",
+    "parent": "Electrical",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 2",
+    "parent": "Electrical",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 3",
+    "parent": "Electrical",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 4",
+    "parent": "Electrical",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 5",
+    "parent": "Electrical",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   }
+  ],
+  "modified": "2024-07-27 23:00:37.902783",
+  "name": "Electrical"
+ },
+ {
+  "collage": "Commerce",
+  "department": "Accounting",
+  "docstatus": 0,
+  "doctype": "Department",
+  "levels": [
+   {
+    "level": "Level 1",
+    "parent": "Accounting",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 2",
+    "parent": "Accounting",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 3",
+    "parent": "Accounting",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 4",
+    "parent": "Accounting",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   }
+  ],
+  "modified": "2024-07-27 23:01:10.047864",
+  "name": "Accounting"
+ },
+ {
+  "collage": "Commerce",
+  "department": "Business Management",
+  "docstatus": 0,
+  "doctype": "Department",
+  "levels": [
+   {
+    "level": "Level 1",
+    "parent": "Business Management",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 2",
+    "parent": "Business Management",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 3",
+    "parent": "Business Management",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 4",
+    "parent": "Business Management",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   }
+  ],
+  "modified": "2024-07-27 23:02:19.626240",
+  "name": "Business Management"
+ },
+ {
+  "collage": "Science",
+  "department": "Chemistry",
+  "docstatus": 0,
+  "doctype": "Department",
+  "levels": [
+   {
+    "level": "Level 1",
+    "parent": "Chemistry",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 2",
+    "parent": "Chemistry",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 3",
+    "parent": "Chemistry",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 4",
+    "parent": "Chemistry",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   }
+  ],
+  "modified": "2024-07-27 23:02:52.437798",
+  "name": "Chemistry"
+ },
+ {
+  "collage": "Science",
+  "department": "Biology",
+  "docstatus": 0,
+  "doctype": "Department",
+  "levels": [
+   {
+    "level": "Level 1",
+    "parent": "Biology",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 2",
+    "parent": "Biology",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 3",
+    "parent": "Biology",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 4",
+    "parent": "Biology",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   }
+  ],
+  "modified": "2024-07-27 23:03:30.736548",
+  "name": "Biology"
+ },
+ {
+  "collage": "Literature",
+  "department": "English",
+  "docstatus": 0,
+  "doctype": "Department",
+  "levels": [
+   {
+    "level": "Level 1",
+    "parent": "English",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 2",
+    "parent": "English",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 3",
+    "parent": "English",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 4",
+    "parent": "English",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   }
+  ],
+  "modified": "2024-07-27 23:04:05.735858",
+  "name": "English"
+ },
+ {
+  "collage": "Computer",
+  "department": "Cyber ​​security",
+  "docstatus": 0,
+  "doctype": "Department",
+  "levels": [
+   {
+    "level": "Level 1",
+    "parent": "Cyber ​​security",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 2",
+    "parent": "Cyber ​​security",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 3",
+    "parent": "Cyber ​​security",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   }
+  ],
+  "modified": "2024-05-20 01:32:09.035651",
+  "name": "Cyber ​​security"
+ },
+ {
+  "collage": "Computer",
+  "department": "CS",
+  "docstatus": 0,
+  "doctype": "Department",
+  "levels": [
+   {
+    "level": "Level 1",
+    "parent": "CS",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 2",
+    "parent": "CS",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 3",
+    "parent": "CS",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   },
+   {
+    "level": "Level 4",
+    "parent": "CS",
+    "parentfield": "levels",
+    "parenttype": "Department"
+   }
+  ],
+  "modified": "2024-05-20 01:30:01.437650",
+  "name": "CS"
+ }
+]

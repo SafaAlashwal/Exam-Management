@@ -1,6 +1,11 @@
 {
- "charts": [],
- "content": "[{\"id\":\"ZmrzBI3bQg\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"gfUCf3Pm5I\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Your Shortucts</span>\",\"col\":12}},{\"id\":\"_0TsgOEWBz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Collage\",\"col\":3}},{\"id\":\"E-12T5wAvB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Department\",\"col\":3}},{\"id\":\"JJ4sfsRk-c\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Doctor\",\"col\":3}},{\"id\":\"JC2YZ9P-Xx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Course\",\"col\":3}},{\"id\":\"36MzjYMLOU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lms Question\",\"col\":3}},{\"id\":\"z4Wwvftmxq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create Exam\",\"col\":3}},{\"id\":\"hA_-g8Dlv0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Model\",\"col\":3}},{\"id\":\"Zy8-CHVAe8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Type Settings\",\"col\":3}},{\"id\":\"GdfnDDWfcO\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"m0uCD3rWm0\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Y1hsniyyys\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b><b></b></span>\",\"col\":12}},{\"id\":\"jk80EPQf2H\",\"type\":\"card\",\"data\":{\"card_name\":\"Academic programs\",\"col\":4}},{\"id\":\"Ik6R4lnlHN\",\"type\":\"card\",\"data\":{\"card_name\":\"Master\",\"col\":4}},{\"id\":\"p8gcQDVTBF\",\"type\":\"card\",\"data\":{\"card_name\":\"Content Exam\",\"col\":4}}]",
+ "charts": [
+  {
+   "chart_name": "Course Results",
+   "label": "Courses Results"
+  }
+ ],
+ "content": "[{\"id\":\"ZmrzBI3bQg\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"hFKjvgaxoZ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Collages\",\"col\":3}},{\"id\":\"Y6qr2b_YpU\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Courses\",\"col\":3}},{\"id\":\"3FGVJahbLL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Doctors\",\"col\":3}},{\"id\":\"__MEWqdKSG\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Students\",\"col\":3}},{\"id\":\"gfUCf3Pm5I\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Your Shortucts</span>\",\"col\":12}},{\"id\":\"36MzjYMLOU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lms Question\",\"col\":3}},{\"id\":\"z4Wwvftmxq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create Exam\",\"col\":3}},{\"id\":\"hA_-g8Dlv0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Model\",\"col\":3}},{\"id\":\"Zy8-CHVAe8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Type Settings\",\"col\":3}},{\"id\":\"GdfnDDWfcO\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"wgoVrUJW2Y\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"--Ejj7MxVJ\",\"type\":\"card\",\"data\":{\"card_name\":\"Report\",\"col\":12}},{\"id\":\"1VD0ejuSd3\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Courses Results\",\"col\":12}},{\"id\":\"49KRN5MncO\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Y1hsniyyys\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b><b></b></span>\",\"col\":12}},{\"id\":\"jk80EPQf2H\",\"type\":\"card\",\"data\":{\"card_name\":\"Academic programs\",\"col\":4}},{\"id\":\"Ik6R4lnlHN\",\"type\":\"card\",\"data\":{\"card_name\":\"Master\",\"col\":4}},{\"id\":\"p8gcQDVTBF\",\"type\":\"card\",\"data\":{\"card_name\":\"Content Exam\",\"col\":4}},{\"id\":\"m0uCD3rWm0\",\"type\":\"spacer\",\"data\":{\"col\":12}}]",
  "creation": "2024-05-12 03:34:30.914726",
  "custom_blocks": [],
  "docstatus": 0,
@@ -139,13 +144,49 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Report",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Student Answer",
+   "link_count": 0,
+   "link_to": "Student Answer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-06-03 03:05:01.888342",
+ "modified": "2024-07-27 22:44:50.867426",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Exam Management",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Students",
+   "number_card_name": "Students"
+  },
+  {
+   "label": "Courses",
+   "number_card_name": "Courses"
+  },
+  {
+   "label": "Collages",
+   "number_card_name": "Collage"
+  },
+  {
+   "label": "Doctors",
+   "number_card_name": "Doctor"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
@@ -172,14 +213,6 @@
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "Doctor",
-   "link_to": "Doctor",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
    "label": "Model",
    "link_to": "Model",
    "stats_filter": "[]",
@@ -188,32 +221,8 @@
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "Collage",
-   "link_to": "Collage",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
    "label": "Type Settings",
    "link_to": "Type Setting",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Course",
-   "link_to": "Course",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Department",
-   "link_to": "Department",
    "stats_filter": "[]",
    "type": "DocType"
   }

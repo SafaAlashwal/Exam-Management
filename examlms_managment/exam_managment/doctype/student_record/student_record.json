@@ -14,7 +14,6 @@
   "department",
   "level",
   "section_break_yzna",
-  "course",
   "semester_mark"
  ],
  "fields": [
@@ -61,12 +60,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "course",
-   "fieldtype": "Link",
-   "label": "Course",
-   "options": "Course"
-  },
-  {
    "fieldname": "semester_mark",
    "fieldtype": "Float",
    "label": "Semester Mark"
@@ -74,7 +67,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-16 02:37:42.175626",
+ "modified": "2024-07-27 22:45:36.779078",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Student Record",

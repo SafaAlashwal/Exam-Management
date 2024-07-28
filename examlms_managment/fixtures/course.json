@@ -1,0 +1,102 @@
+[
+ {
+  "chapter": [
+   {
+    "name1": "Vue Chapter 1",
+    "parent": "Vue",
+    "parentfield": "chapter",
+    "parenttype": "Course"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Course",
+  "modified": "2024-05-20 00:58:46.581263",
+  "name": "Vue",
+  "name1": "Vue"
+ },
+ {
+  "chapter": [
+   {
+    "name1": "ASP.Net Chapter 1",
+    "parent": "ASP.Net",
+    "parentfield": "chapter",
+    "parenttype": "Course"
+   },
+   {
+    "name1": "ASP.Net Chapter 2",
+    "parent": "ASP.Net",
+    "parentfield": "chapter",
+    "parenttype": "Course"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Course",
+  "modified": "2024-07-27 23:09:08.579308",
+  "name": "ASP.Net",
+  "name1": "ASP.Net"
+ },
+ {
+  "chapter": [],
+  "docstatus": 0,
+  "doctype": "Course",
+  "modified": "2024-07-27 18:34:58.271499",
+  "name": "Analysis",
+  "name1": "Analysis "
+ },
+ {
+  "chapter": [],
+  "docstatus": 0,
+  "doctype": "Course",
+  "modified": "2024-07-27 20:51:00.143257",
+  "name": "Computer Ethics",
+  "name1": "Computer Ethics"
+ },
+ {
+  "chapter": [
+   {
+    "name1": "Web Chapter 1",
+    "parent": "Web",
+    "parentfield": "chapter",
+    "parenttype": "Course"
+   },
+   {
+    "name1": "Web Chapter 2",
+    "parent": "Web",
+    "parentfield": "chapter",
+    "parenttype": "Course"
+   },
+   {
+    "name1": "Web Chapter 3",
+    "parent": "Web",
+    "parentfield": "chapter",
+    "parenttype": "Course"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Course",
+  "modified": "2024-07-27 23:08:44.443196",
+  "name": "Web",
+  "name1": "Web"
+ },
+ {
+  "chapter": [
+   {
+    "name1": "Chapter Frappe 1",
+    "parent": "Frappe",
+    "parentfield": "chapter",
+    "parenttype": "Course"
+   },
+   {
+    "name1": "Chapter Frappe 2",
+    "parent": "Frappe",
+    "parentfield": "chapter",
+    "parenttype": "Course"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Course",
+  "modified": "2024-05-26 05:29:49.945092",
+  "name": "Frappe",
+  "name1": "Frappe"
+ }
+]

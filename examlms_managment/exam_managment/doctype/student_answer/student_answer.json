@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:student_id",
+ "autoname": "format:{student_name}-{course}",
  "creation": "2024-07-10 13:17:01.405942",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -10,14 +10,17 @@
   "student_name",
   "course",
   "section_break_lzcu",
-  "result"
+  "result",
+  "section_break_xmwz",
+  "total_mark",
+  "column_break_rxzu",
+  "appreciation"
  ],
  "fields": [
   {
    "fieldname": "student_name",
    "fieldtype": "Data",
-   "label": "Student Name",
-   "unique": 1
+   "label": "Student Name"
   },
   {
    "fieldname": "course",
@@ -37,17 +40,34 @@
   {
    "fieldname": "student_id",
    "fieldtype": "Data",
-   "label": "Student ID",
-   "unique": 1
+   "label": "Student ID"
+  },
+  {
+   "fieldname": "section_break_xmwz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_mark",
+   "fieldtype": "Float",
+   "label": "Total Mark"
+  },
+  {
+   "fieldname": "column_break_rxzu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "appreciation",
+   "fieldtype": "Data",
+   "label": "Appreciation"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-18 00:42:53.068882",
+ "modified": "2024-07-28 00:09:46.329855",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Student Answer",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

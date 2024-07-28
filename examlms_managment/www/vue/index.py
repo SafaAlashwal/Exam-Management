@@ -77,7 +77,7 @@ def check_answer(question_id, student_answer):
 
 
 @frappe.whitelist(allow_guest=True)
-def send_answer(student_id , student_name, course, answers):
+def send_answer(student_id , student_name, course, answers, appreciation , total_mark):
     # إنشاء سجل جديد من نوع "Student Answer"
     doc = frappe.new_doc("Student Answer")
     
@@ -85,6 +85,8 @@ def send_answer(student_id , student_name, course, answers):
     doc.student_id = student_id
     doc.student_name = student_name
     doc.course = course
+    doc.appreciation = appreciation
+    doc.total_mark = total_mark
     
     # إضافة الأسئلة والأجوبة
     for answer in answers:

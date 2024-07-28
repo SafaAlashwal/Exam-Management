@@ -113,7 +113,7 @@
   },
   {
    "fieldname": "total_marks",
-   "fieldtype": "Int",
+   "fieldtype": "Float",
    "label": "Total Marks",
    "read_only": 1
   },
@@ -142,8 +142,9 @@
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2024-07-17 23:05:38.637034",
+ "modified": "2024-07-26 19:06:27.383052",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Model",

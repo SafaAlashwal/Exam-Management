@@ -1,0 +1,135 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Type Setting",
+  "exam_structure": [
+   {
+    "number_of_question": 5,
+    "parent": "Medium",
+    "parentfield": "exam_structure",
+    "parenttype": "Type Setting",
+    "question_level": "medium",
+    "type": "User Input"
+   },
+   {
+    "number_of_question": 2,
+    "parent": "Medium",
+    "parentfield": "exam_structure",
+    "parenttype": "Type Setting",
+    "question_level": "Hard",
+    "type": "Choices"
+   },
+   {
+    "number_of_question": 3,
+    "parent": "Medium",
+    "parentfield": "exam_structure",
+    "parenttype": "Type Setting",
+    "question_level": "Easy",
+    "type": "Choices"
+   }
+  ],
+  "exam_structure2": [],
+  "modified": "2024-07-27 23:12:42.509997",
+  "name": "Medium",
+  "number_of_questions": 0,
+  "title": "Medium",
+  "type": "Number"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Type Setting",
+  "exam_structure": [
+   {
+    "number_of_question": 6,
+    "parent": "Hard",
+    "parentfield": "exam_structure",
+    "parenttype": "Type Setting",
+    "question_level": "Hard",
+    "type": "Choices"
+   },
+   {
+    "number_of_question": 2,
+    "parent": "Hard",
+    "parentfield": "exam_structure",
+    "parenttype": "Type Setting",
+    "question_level": "Easy",
+    "type": "User Input"
+   },
+   {
+    "number_of_question": 2,
+    "parent": "Hard",
+    "parentfield": "exam_structure",
+    "parenttype": "Type Setting",
+    "question_level": "Easy",
+    "type": "Choices"
+   }
+  ],
+  "exam_structure2": [
+   {
+    "parent": "Hard",
+    "parentfield": "exam_structure2",
+    "parenttype": "Type Setting",
+    "percentage": 20,
+    "question_level": "Easy",
+    "type": "Choices"
+   },
+   {
+    "parent": "Hard",
+    "parentfield": "exam_structure2",
+    "parenttype": "Type Setting",
+    "percentage": 20,
+    "question_level": "Hard",
+    "type": "User Input"
+   },
+   {
+    "parent": "Hard",
+    "parentfield": "exam_structure2",
+    "parenttype": "Type Setting",
+    "percentage": 60,
+    "question_level": "Hard",
+    "type": "Choices"
+   }
+  ],
+  "modified": "2024-07-27 23:17:40.512606",
+  "name": "Hard",
+  "number_of_questions": 6,
+  "title": "Hard",
+  "type": "Number"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Type Setting",
+  "exam_structure": [
+   {
+    "number_of_question": 3,
+    "parent": "Easy",
+    "parentfield": "exam_structure",
+    "parenttype": "Type Setting",
+    "question_level": "Easy",
+    "type": "User Input"
+   },
+   {
+    "number_of_question": 2,
+    "parent": "Easy",
+    "parentfield": "exam_structure",
+    "parenttype": "Type Setting",
+    "question_level": "Hard",
+    "type": "Choices"
+   },
+   {
+    "number_of_question": 5,
+    "parent": "Easy",
+    "parentfield": "exam_structure",
+    "parenttype": "Type Setting",
+    "question_level": "Easy",
+    "type": "Choices"
+   }
+  ],
+  "exam_structure2": [],
+  "modified": "2024-07-27 23:13:11.824561",
+  "name": "Easy",
+  "number_of_questions": 0,
+  "title": "Easy",
+  "type": "Number"
+ }
+]
