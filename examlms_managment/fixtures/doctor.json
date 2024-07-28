@@ -1,14 +1,9 @@
 [
  {
+  "collage": "Computer",
   "courses": [
    {
     "course": "Frappe",
-    "parent": "safa2@gmail.com",
-    "parentfield": "courses",
-    "parenttype": "Doctor"
-   },
-   {
-    "course": "Vue",
     "parent": "safa2@gmail.com",
     "parentfield": "courses",
     "parenttype": "Doctor"
@@ -16,12 +11,13 @@
   ],
   "docstatus": 0,
   "doctype": "Doctor",
-  "modified": "2024-07-28 00:55:10.667212",
+  "modified": "2024-07-28 21:00:37.779750",
   "name": "safa2@gmail.com",
   "name1": "Safa",
   "user": "safa2@gmail.com"
  },
  {
+  "collage": null,
   "courses": [
    {
     "course": "Vue",
@@ -38,6 +34,7 @@
   "user": "ahmed@gmail.com"
  },
  {
+  "collage": null,
   "courses": [
    {
     "course": "ASP.Net",
@@ -54,6 +51,7 @@
   "user": "hassan@gmail.com"
  },
  {
+  "collage": null,
   "courses": [
    {
     "course": "Frappe",
@@ -70,6 +68,7 @@
   "user": "ala@gmail.com"
  },
  {
+  "collage": null,
   "courses": [
    {
     "course": "Analysis",
@@ -86,6 +85,7 @@
   "user": "mansour@gmail.com"
  },
  {
+  "collage": null,
   "courses": [],
   "docstatus": 0,
   "doctype": "Doctor",
@@ -95,6 +95,7 @@
   "user": "mokhtar@gmail.com"
  },
  {
+  "collage": null,
   "courses": [],
   "docstatus": 0,
   "doctype": "Doctor",
@@ -104,6 +105,7 @@
   "user": "aya@gmail.com"
  },
  {
+  "collage": null,
   "courses": [],
   "docstatus": 0,
   "doctype": "Doctor",
@@ -113,6 +115,7 @@
   "user": "shahba@gmail.com"
  },
  {
+  "collage": null,
   "courses": [],
   "docstatus": 0,
   "doctype": "Doctor",
@@ -122,6 +125,7 @@
   "user": "abeer@gmail.com"
  },
  {
+  "collage": null,
   "courses": [],
   "docstatus": 0,
   "doctype": "Doctor",
@@ -131,6 +135,7 @@
   "user": "marwa@gmail.com"
  },
  {
+  "collage": null,
   "courses": [],
   "docstatus": 0,
   "doctype": "Doctor",
@@ -140,10 +145,11 @@
   "user": "shukry@gmail.com"
  },
  {
+  "collage": "Agriculture",
   "courses": [],
   "docstatus": 0,
   "doctype": "Doctor",
-  "modified": "2024-07-27 20:46:13.367376",
+  "modified": "2024-07-28 21:00:45.418515",
   "name": "rasha@gmail.com",
   "name1": "Rasha",
   "user": "rasha@gmail.com"

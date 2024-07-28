@@ -214,7 +214,6 @@ doc_events = {
 
 
 fixtures =[
-    "Custom Field",
     "Question",
     "Doctor",
     "Course",
