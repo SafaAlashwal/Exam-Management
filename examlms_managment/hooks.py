@@ -214,6 +214,7 @@ doc_events = {
 
 
 fixtures =[
+    "User",
     "Question",
     "Doctor",
     "Course",

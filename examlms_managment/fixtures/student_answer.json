@@ -4,7 +4,6 @@
   "course": "Web",
   "docstatus": 0,
   "doctype": "Student Answer",
-  "images": null,
   "modified": "2024-07-28 00:01:45.184371",
   "name": "safa-Web-01553",
   "result": [
@@ -45,7 +44,6 @@
   "course": "Vue",
   "docstatus": 0,
   "doctype": "Student Answer",
-  "images": null,
   "modified": "2024-07-28 00:01:52.409457",
   "name": "safa-Vue-01554",
   "result": [
@@ -86,7 +84,6 @@
   "course": "Vue",
   "docstatus": 0,
   "doctype": "Student Answer",
-  "images": null,
   "modified": "2024-07-28 00:02:00.875096",
   "name": "shahba-Vue-01555",
   "result": [
@@ -127,7 +124,6 @@
   "course": "Frappe",
   "docstatus": 0,
   "doctype": "Student Answer",
-  "images": null,
   "modified": "2024-07-28 11:56:30.456130",
   "name": "Aya-Frappe",
   "result": [
@@ -168,7 +164,6 @@
   "course": "Web",
   "docstatus": 0,
   "doctype": "Student Answer",
-  "images": null,
   "modified": "2024-07-28 00:11:30.401706",
   "name": "Aya-Web",
   "result": [
@@ -209,7 +204,6 @@
   "course": "Frappe",
   "docstatus": 0,
   "doctype": "Student Answer",
-  "images": null,
   "modified": "2024-07-28 11:56:59.796536",
   "name": "Safa-Frappe",
   "result": [
@@ -250,7 +244,6 @@
   "course": "Frappe",
   "docstatus": 0,
   "doctype": "Student Answer",
-  "images": null,
   "modified": "2024-07-28 11:57:10.710960",
   "name": "Shahba-Frappe",
   "result": [
@@ -291,7 +284,6 @@
   "course": "Vue",
   "docstatus": 0,
   "doctype": "Student Answer",
-  "images": null,
   "modified": "2024-07-28 01:18:38.555015",
   "name": "Shahba-Vue",
   "result": [
@@ -395,12 +387,91 @@
   "course": "Vue",
   "docstatus": 0,
   "doctype": "Student Answer",
-  "images": null,
   "modified": "2024-07-28 18:55:06.492900",
   "name": "Aya-Vue",
   "result": [],
   "student_id": "20_16_1477",
   "student_name": "Aya",
   "total_mark": 40.0
+ },
+ {
+  "appreciation": "failed",
+  "course": "Frappe",
+  "docstatus": 0,
+  "doctype": "Student Answer",
+  "modified": "2024-07-29 02:09:51.181943",
+  "name": "abeer-Frappe",
+  "result": [
+   {
+    "is_correct": 1,
+    "marks": 2.0,
+    "parent": "abeer-Frappe",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "ما هو عاصمة فرنسا؟",
+    "students_response": ""
+   },
+   {
+    "is_correct": 1,
+    "marks": 2.0,
+    "parent": "abeer-Frappe",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "ما هو 2 + 2؟",
+    "students_response": "55"
+   },
+   {
+    "is_correct": 0,
+    "marks": 2.0,
+    "parent": "abeer-Frappe",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "ما هو لون السماء؟",
+    "students_response": "أزرق"
+   }
+  ],
+  "student_id": "33333",
+  "student_name": "abeer",
+  "total_mark": 9.0
+ },
+ {
+  "appreciation": "failed",
+  "course": "Frappe",
+  "docstatus": 0,
+  "doctype": "Student Answer",
+  "modified": "2024-07-29 02:11:17.401467",
+  "name": "ahmed-Frappe",
+  "result": [
+   {
+    "is_correct": 1,
+    "marks": 2.0,
+    "parent": "ahmed-Frappe",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "ما هو عاصمة فرنسا؟",
+    "students_response": ""
+   },
+   {
+    "is_correct": 1,
+    "marks": 2.0,
+    "parent": "ahmed-Frappe",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "ما هو 2 + 2؟",
+    "students_response": "55"
+   },
+   {
+    "is_correct": 0,
+    "marks": 2.0,
+    "parent": "ahmed-Frappe",
+    "parentfield": "result",
+    "parenttype": "Student Answer",
+    "question": "ما هو لون السماء؟",
+    "students_response": "أزرق"
+   }
+  ],
+  "student_id": "33333",
+  "student_name": "ahmed",
+  "total_mark": 9.0
  }
 ]
