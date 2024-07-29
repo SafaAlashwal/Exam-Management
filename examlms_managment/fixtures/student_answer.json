@@ -4,6 +4,7 @@
   "course": "Web",
   "docstatus": 0,
   "doctype": "Student Answer",
+  "images": null,
   "modified": "2024-07-28 00:01:45.184371",
   "name": "safa-Web-01553",
   "result": [
@@ -44,6 +45,7 @@
   "course": "Vue",
   "docstatus": 0,
   "doctype": "Student Answer",
+  "images": null,
   "modified": "2024-07-28 00:01:52.409457",
   "name": "safa-Vue-01554",
   "result": [
@@ -84,6 +86,7 @@
   "course": "Vue",
   "docstatus": 0,
   "doctype": "Student Answer",
+  "images": null,
   "modified": "2024-07-28 00:02:00.875096",
   "name": "shahba-Vue-01555",
   "result": [
@@ -124,6 +127,7 @@
   "course": "Frappe",
   "docstatus": 0,
   "doctype": "Student Answer",
+  "images": null,
   "modified": "2024-07-28 11:56:30.456130",
   "name": "Aya-Frappe",
   "result": [
@@ -164,6 +168,7 @@
   "course": "Web",
   "docstatus": 0,
   "doctype": "Student Answer",
+  "images": null,
   "modified": "2024-07-28 00:11:30.401706",
   "name": "Aya-Web",
   "result": [
@@ -204,6 +209,7 @@
   "course": "Frappe",
   "docstatus": 0,
   "doctype": "Student Answer",
+  "images": null,
   "modified": "2024-07-28 11:56:59.796536",
   "name": "Safa-Frappe",
   "result": [
@@ -244,6 +250,7 @@
   "course": "Frappe",
   "docstatus": 0,
   "doctype": "Student Answer",
+  "images": null,
   "modified": "2024-07-28 11:57:10.710960",
   "name": "Shahba-Frappe",
   "result": [
@@ -284,6 +291,7 @@
   "course": "Vue",
   "docstatus": 0,
   "doctype": "Student Answer",
+  "images": null,
   "modified": "2024-07-28 01:18:38.555015",
   "name": "Shahba-Vue",
   "result": [
@@ -387,6 +395,7 @@
   "course": "Vue",
   "docstatus": 0,
   "doctype": "Student Answer",
+  "images": null,
   "modified": "2024-07-28 18:55:06.492900",
   "name": "Aya-Vue",
   "result": [],

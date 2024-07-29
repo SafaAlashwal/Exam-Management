@@ -14,7 +14,9 @@
   "section_break_xmwz",
   "total_mark",
   "column_break_rxzu",
-  "appreciation"
+  "appreciation",
+  "section_break_ikbs",
+  "images"
  ],
  "fields": [
   {
@@ -60,11 +62,20 @@
    "fieldname": "appreciation",
    "fieldtype": "Data",
    "label": "Appreciation"
+  },
+  {
+   "fieldname": "section_break_ikbs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "images",
+   "fieldtype": "Image",
+   "label": "Images"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-28 20:15:08.053826",
+ "modified": "2024-07-29 02:10:59.607913",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Student Answer",
