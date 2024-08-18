@@ -10,7 +10,7 @@
  "idx": 0,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-07-28 13:29:10.777163",
+ "modified": "2024-07-29 13:40:34.970435",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Course Result",
@@ -21,7 +21,7 @@
  "time_interval": "Yearly",
  "timeseries": 0,
  "timespan": "Last Year",
- "type": "Line",
+ "type": "Bar",
  "use_report_chart": 1,
  "x_field": "",
  "y_axis": []

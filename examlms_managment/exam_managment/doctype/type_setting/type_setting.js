@@ -4,7 +4,7 @@
 frappe.ui.form.on("Type Setting", {
     after_save: function(frm) {
 
-		if (frm.doc.type === 'Parcentage'){
+		if (frm.doc.type === 'Percentage'){
 			frappe.call({
 				method: 'get_questions2',
 				doc:frm.doc,

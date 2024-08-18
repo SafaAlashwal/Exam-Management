@@ -14,7 +14,9 @@
   "department",
   "level",
   "section_break_yzna",
-  "semester_mark"
+  "semester_mark",
+  "column_break_djmx",
+  "semester_mark_total"
  ],
  "fields": [
   {
@@ -63,11 +65,20 @@
    "fieldname": "semester_mark",
    "fieldtype": "Float",
    "label": "Semester Mark"
+  },
+  {
+   "fieldname": "column_break_djmx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "semester_mark_total",
+   "fieldtype": "Float",
+   "label": "Semester Mark Total"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-27 22:45:36.779078",
+ "modified": "2024-07-29 23:28:15.943077",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Student Record",

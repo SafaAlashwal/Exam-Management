@@ -14,23 +14,6 @@ frappe.ui.form.on('Create Exam', {
             frm.set_value('doctor', '');
         }
     });
-    // frm.set_query('collage', function() {
-    //     if (frm.doc.doctor) {
-    //       return {
-    //         filters: {
-    //           doctor: frm.doc.doctor
-    //         }
-    //       };
-    //     }
-    //     else {console.log(doc.frm.doctor);}
-    //   });
-  //   frm.set_query("collage", function() {
-  //   return {
-  //     "filters": {
-  //       "doctor": frm.doc.doctor
-  //     }
-  //   };
-  // });
 },
   refresh : function (frm){
     frm.add_custom_button(__("Fetch Question"), function() {
@@ -43,9 +26,6 @@ frappe.ui.form.on('Create Exam', {
         });
   });
 
-  // var doc_value = frm.doc.doctor; // الحصول على قيمة الحقل "doctor"
-  
-  // إذا كان الحقل من نوع "link"، يمكنك الحصول على القيمة التي يشير إليها الحق
         ///////////// Filter Department ////////////////
   frm.set_query("department", function() {
     return {
@@ -55,16 +35,7 @@ frappe.ui.form.on('Create Exam', {
     };
   });
 
-  // frm.set_query('collage', function() {
-  //   if (frm.doc.doctor) {
-  //     return {
-  //       filters: {
-  //         doctor: frm.doc.doctor
-  //       }
-  //     };
-  //   }
-  //   else {console.log(doc.frm.doctor);}
-  // });
+  
       ///////////// Filter Chapter ////////////////
   frm.set_query('name1', 'chapter', function() {
     return {
@@ -99,7 +70,7 @@ frappe.ui.form.on('Create Exam', {
               create_exam_doc_name: frm.doc.name
           },
           callback: (response) => {
-            frappe.msgprint("hhhhhhhh");
+            frappe.msgprint("Done Created Model");
               // Check if the response contains the error message
               const error_message = "Not enough unique questions of type Choices and level Hard to create the models.";
               if (response.message.includes(error_message)) {

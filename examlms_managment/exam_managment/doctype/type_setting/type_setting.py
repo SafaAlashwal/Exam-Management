@@ -15,7 +15,7 @@ class TypeSetting(Document):
 					'type': structure.type,
 					'custom_difficulty_level': structure.question_level
 				}, fields=["question"], limit_page_length=structure.number_of_question)
-			frappe.msgprint(str(questions))
+			# frappe.msgprint(len(questions))
 			return questions
 		
 
@@ -38,6 +38,6 @@ class TypeSetting(Document):
 					'type': structure.type,
 					'custom_difficulty_level': structure.question_level
 				}, fields=["question"], limit_page_length=num_questions)
-			frappe.msgprint(str(questions))
+			# frappe.msgprint(str(questions))
 			return questions
 

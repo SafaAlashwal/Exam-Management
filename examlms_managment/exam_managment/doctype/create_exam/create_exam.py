@@ -235,9 +235,11 @@ class CreateExam(Document):
                 self.set('total_question_list', [])
                 for question in questions:
                     question_doc = frappe.get_doc('Question', question["name"])
-          
 
-                    if question_doc.custom_is_subquestion:
+                    question_blocks = frappe.get_all("Question Block", filters={"question": question_doc.name})
+
+                    # إذا كانت هناك 'Question Block' واحدة على الأقل، افترض أنها تحتوي على والد
+                    if question_blocks:
                         parent_question_block = frappe.get_doc("Question Block", question_doc.name)
                         if parent_question_block:
                             parent_question_title = parent_question_block.parent
@@ -257,17 +259,7 @@ class CreateExam(Document):
 
                             })
                     else:
-                            #             if question_doc.type == 'Choices' :
-                            #     answer_1 = question_doc.option_1
-                            #     answer_2 = question_doc.option_2
-                            #     answer_3 = question_doc.option_3
-                            #     answer_4 = question_doc.option_4
-                            # elif question_doc.type == 'User Input':
-                            #     answer_1 = question_doc.possibility_1
-                            #     answer_2 = question_doc.possibility_2
-                            #     answer_3 = question_doc.possibility_3
-                            #     answer_4 = question_doc.possibility_4
-                        self.append("total_question_list", {
+                            self.append("total_question_list", {
                             "question": question_doc.name,
                             "question_title": question_doc.question,
                             "question_type": question_doc.type,
@@ -314,8 +306,6 @@ class CreateExam(Document):
             courses = [course.course for course in doctor_doc.courses]
             # frappe.msgprint("Courses for Doctor '{0}': {1}".format(doctor, ", ".join(courses)))
             return {"courses": courses}
-# تصحيح الفلترة في الـdoctype 'Collage'
-
 
         @frappe.whitelist()
         def get_filtered_level(self, department):
@@ -345,15 +335,3 @@ class CreateExam(Document):
                 "number_of_questions": total_questions
             }
             return question_details
-
-
-
-                # تعيين استعلام مخصص للفلترة في `Collage`
-# @frappe.whitelist()
-# def get_collages_by_doctor(doctype, txt, searchfield, start, page_len, filters):
-#     doctor = filters.get('doctor')
-#     if doctor:
-#         return frappe.db.sql("""SELECT name FROM `tabCollage` 
-#             WHERE name IN (SELECT collage FROM `tabDoctor` WHERE doctor=%s)""", doctor)
-#     else:
-#         return frappe.db.sql("""SELECT name FROM `tabCollage`""")

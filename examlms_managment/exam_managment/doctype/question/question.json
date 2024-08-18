@@ -9,12 +9,14 @@
  "engine": "InnoDB",
  "field_order": [
   "question",
-  "type",
   "multiple_correct_answer",
   "custom_is_subquestion",
-  "section_break_jomv",
+  "section_break_iojs",
   "custom_course",
+  "column_break_cdry",
   "custom_chapter",
+  "section_break_jomv",
+  "type",
   "column_break_iagu",
   "custom_difficulty_level",
   "custom_question_mark",
@@ -208,6 +210,7 @@
    "options": "Chapter"
   },
   {
+   "depends_on": "eval:doc.type!=\"Block\"",
    "fieldname": "custom_question_mark",
    "fieldtype": "Float",
    "label": "Question Mark"
@@ -243,12 +246,21 @@
    "fieldname": "custom_is_subquestion",
    "fieldtype": "Check",
    "hidden": 1,
-   "label": "Is Subquestion"
+   "label": "Is Subquestion",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_iojs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_cdry",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-28 18:44:30.294449",
+ "modified": "2024-07-30 10:56:57.754479",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Question",

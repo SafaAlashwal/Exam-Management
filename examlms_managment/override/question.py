@@ -6,7 +6,7 @@ from lms.lms.doctype.lms_question.lms_question import LMSQuestion
 
 from frappe.model.document import Document
 
-
+ 
 
 class LMSQuestion(Document):
 	def validate(self):

@@ -44,7 +44,6 @@
    "reqd": 1
   },
   {
-   "depends_on": "eval:doc.course",
    "fieldname": "collage",
    "fieldtype": "Link",
    "label": "Collage",
@@ -52,7 +51,6 @@
    "reqd": 1
   },
   {
-   "depends_on": "eval:doc.collage",
    "fieldname": "department",
    "fieldtype": "Link",
    "label": "Department",
@@ -60,7 +58,6 @@
    "reqd": 1
   },
   {
-   "depends_on": "eval:doc.department",
    "fieldname": "level",
    "fieldtype": "Link",
    "label": "Level",
@@ -203,7 +200,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-28 21:31:42.996739",
+ "modified": "2024-07-29 19:33:33.878711",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Create Exam",

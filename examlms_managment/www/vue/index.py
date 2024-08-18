@@ -15,11 +15,11 @@ def get_prop(student_id):
             ["end_time", ">=", now],
             ["collage", "=", student.collage],
             ["department", "=", student.department],
-            ["level", "=", student.level]
+            ["level", "=", student.level],
+            ["docstatus" , "=" , 1],
         ],
         fields=["*"]
     )
-    
     # Group the models by course
     course_groups = {}
     for prop in properties:
@@ -43,7 +43,6 @@ def get_prop(student_id):
         random_properties.append(random_prop)
     
     return random_properties if random_properties else []
-
 
 
 @frappe.whitelist(allow_guest=True)

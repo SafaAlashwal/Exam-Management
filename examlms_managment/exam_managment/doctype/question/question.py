@@ -13,6 +13,12 @@ class Question(Document):
 		validate_possible_block(self)
 
 
+@frappe.whitelist()
+def get_filtered_course(doctor):
+	doctor_doc = frappe.get_doc("Doctor", doctor)
+	courses = [course.course for course in doctor_doc.courses]
+	return {"courses": courses}
+
 
 def validate_correct_answers(question):
 	if question.type == "Choices":
@@ -104,23 +110,6 @@ def validate_question_block(doc, method):
         frappe.log(f"Error validating question block: {e}")
 
 
-
-
-# # استعلام للحصول على الأسئلة التي يكون نوعها Block
-		# block_questions = frappe.get_all("LMS Question", filters={"type": "Block"}, fields=["name"])
-
-		# # قائمة لتخزين الأسئلة الداخلية
-		# internal_questions = []
-
-		# # الحصول على الأسئلة الداخلية
-		# for question in block_questions:
-		# 	child_questions = frappe.get_all("Question Block", filters={"parent": question.name}, fields=["name"])
-		# 	internal_questions.extend(child_questions)
-
-		# # طباعة الأسئلة الداخلية
-		# for question in internal_questions:
-		# 	frappe.msgprint(question.name)
-
 def validate_possible_block(question):
 	# السؤال الخارجي
 	# external_question = frappe.get_doc("LMS Question", "external_question_name")
@@ -140,16 +129,3 @@ def validate_possible_block(question):
 	for questions in internal_questions:
 		print(questions.name)
 
-# @frappe.whitelist()
-# def get_question_details(question):
-# 	if not has_course_instructor_role() or not has_course_moderator_role():
-# 		return
-
-# 	fields = ["question", "type", "name"]
-# 	for i in range(1, 5):
-# 		fields.append(f"option_{i}")
-# 		fields.append(f"is_correct_{i}")
-# 		fields.append(f"explanation_{i}")
-# 		fields.append(f"possibility_{i}")
-
-# 	return frappe.db.get_value("LMS Question", question, fields, as_dict=1)

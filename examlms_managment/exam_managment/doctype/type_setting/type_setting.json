@@ -28,7 +28,7 @@
    "options": "Percentage\nNumber"
   },
   {
-   "depends_on": "eval: doc.type == 'Parcentage'",
+   "depends_on": "eval: doc.type == 'Percentage'",
    "fieldname": "number_of_questions",
    "fieldtype": "Int",
    "label": "Number of Questions"
@@ -50,7 +50,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-15 20:20:33.670533",
+ "modified": "2024-07-30 08:03:51.746220",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Type Setting",

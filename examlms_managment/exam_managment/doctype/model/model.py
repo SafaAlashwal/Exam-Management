@@ -147,7 +147,7 @@ def Add_Model(create_exam_doc_name):
                 "option_4": question.option_4,
             })
 
-        frappe.msgprint(f"{message} {len(model_doc.question)} questions with total marks {total_marks}")
+        # frappe.msgprint(f"{message} {len(model_doc.question)} questions with total marks {total_marks}")
         model_doc.number_of_questions = len(model_doc.question)
         model_doc.total_marks = total_marks  # Save total marks for the model
         model_doc.save()

@@ -10,7 +10,7 @@
  "idx": 0,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2024-07-27 22:31:52.652965",
+ "modified": "2024-07-29 13:45:19.069752",
  "modified_by": "Administrator",
  "module": "Exam Managment",
  "name": "Students Results",
@@ -27,7 +27,7 @@
  "y_axis": [
   {
    "color": "#449CF0",
-   "y_field": "total_mark"
+   "y_field": "course_count"
   }
  ]
 }
